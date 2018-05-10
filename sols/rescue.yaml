@@ -1,0 +1,34 @@
+ag_0:
+  loc_0_0: right
+  loc_0_1: down
+  loc_0_2: down
+  loc_0_3: down
+  loc_1_0: right
+  loc_1_1: down
+  loc_1_2: down
+  loc_1_3: down
+  loc_2_0: right
+  loc_2_1: down
+  loc_2_2: down
+  loc_2_3: down
+  loc_3_0: down
+  loc_3_1: down
+  loc_3_2: down
+  loc_3_3: down
+ag_1:
+  loc_0_0: right
+  loc_0_1: right
+  loc_0_2: right
+  loc_0_3: right
+  loc_1_0: right
+  loc_1_1: right
+  loc_1_2: right
+  loc_1_3: right
+  loc_2_0: right
+  loc_2_1: right
+  loc_2_2: right
+  loc_2_3: down
+  loc_3_0: up
+  loc_3_1: right
+  loc_3_2: down
+  loc_3_3: down
