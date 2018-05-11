@@ -1,16 +1,4 @@
 
-move: {
-  requirements: {
-    at: [0,1],
-    road: [1,2],
-  },
-  outcomes: {
-    at: [0,2],
-  },
-}
-
-# agents: [ag_0,ag_1,ag_2,ag_3]
-# agents: [ag_0,ag_1,ag_2]
 agents: [ag_0,ag_1]
 
 locs: [loc_0_0,loc_0_1,loc_0_2,loc_0_3,loc_1_0,loc_1_1,loc_1_2,loc_1_3,loc_2_0,loc_2_1,loc_2_2,loc_2_3,loc_3_0,loc_3_1,loc_3_2,loc_3_3]
@@ -18,20 +6,12 @@ locs: [loc_0_0,loc_0_1,loc_0_2,loc_0_3,loc_1_0,loc_1_1,loc_1_2,loc_1_3,loc_2_0,l
 at: [
   [ag_0,loc_0_0],
   [ag_1,loc_0_0],
-  # [ag_2,loc_0_0],
-  # [ag_3,loc_0_0],
-  # [ag_4,loc_0_0],
-  # [ag_5,loc_0_0],
 ]
 
 goal: {
   at: [
     [ag_0,loc_3_0],
     [ag_1,loc_3_3],
-    # [ag_2,loc_9_2],
-    # [ag_3,loc_9_3],
-    # [ag_4,loc_9_4],
-    # [ag_5,loc_9_5],
   ]
 }
 

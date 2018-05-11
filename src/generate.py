@@ -22,11 +22,6 @@ def main():
 			required=True,
 			help='Output MDP file name.'
 		)
-	parser.add_argument(
-			'-v','--verbose',
-			action='count',
-			help='Verbose mode.'
-		)
 	args = parser.parse_args()
 
 	with open(args.input,'r') as f:
@@ -35,15 +30,9 @@ def main():
 	problem = Problem()
 	problem.synth(yaml_problem)
 
-	mdp = Mdp(
-		T=problem.T,
-		R=problem.R,
-		n=problem.n,
-		m=problem.m,
-	)
+	mdp = Mdp(T=problem.T,R=problem.R)
 
-	with open(args.output,'w') as f:
-		f.write(str(mdp))
+	mdp.store_problem(args.output)
 
 if __name__ == "__main__":
     main()

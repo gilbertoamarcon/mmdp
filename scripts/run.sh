@@ -2,6 +2,6 @@
 
 prob=$1
 
-python src/generate_parking.py -i problems/$prob.yaml -o problems/$prob.txt
-python src/solve.py -i problems/$prob.txt -d 0.9 -o sols/$prob.csv
-python src/analyse_parking.py -i problems/$prob.yaml -s sols/$prob.csv
+python src/generate.py -i problems/$prob.yaml -o problems/$prob.h5
+python src/solve.py -i problems/$prob.h5 -d 0.9 -o sols/$prob.h5
+python src/analyse.py -i problems/$prob.yaml -s sols/$prob.h5 -o sols/$prob.yaml

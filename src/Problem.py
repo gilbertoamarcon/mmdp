@@ -42,5 +42,5 @@ class Problem:
 		actions = [OrderedDict(e) for e in Problem.expand(problem,'actions')]
 		self.n = len(states)
 		self.m = len(actions)
-		return {agent:{s[agent]: actions[solution['policy'][i]][agent] for i,s in enumerate(states)} for agent in problem['agents']}
+		return {agent:{s[agent]: actions[solution[i]][agent] for i,s in enumerate(states)} for agent in problem['agents']}
 

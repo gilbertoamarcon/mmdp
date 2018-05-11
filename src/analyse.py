@@ -2,6 +2,7 @@
 
 from Problem import *
 import argparse as ap
+import deepdish as dd
 import yaml
 import csv
 
@@ -32,15 +33,13 @@ def main():
 	args = parser.parse_args()
 
 	with open(args.input,'r') as f:
-		problem = yaml.load(f.read())
+		yaml_problem = yaml.load(f.read())
 
-	with open(args.solution,'r') as f:
-		data = map(list,zip(*[row for row in csv.reader(f)]))
-		solution = {data[0][0]: [int(d) for d in data[0][1:]],data[1][0]: [float(d) for d in data[1][1:]]}
+	raw = dd.io.load(args.solution)
 
 	prob = Problem()
 
-	sol = prob.translate(problem,solution)
+	sol = prob.translate(yaml_problem,raw['pol'])
 	with open(args.output, 'w') as f:
 		yaml.dump(sol,f, default_flow_style=False)
 
