@@ -37,6 +37,11 @@ class Problem:
 			'items':	{k:v for d in [self.locs,self.agents] for k,v in d.items()},
 		}
 
+		self.num_agents	= len(self.agents)
+		self.num_locs	= len(self.locs)
+
+
+
 	def encode(self, cls, name):
 		return self.els[cls][name]
 
@@ -51,54 +56,55 @@ class Problem:
 		self.encoder()
 
 		# Enumerating states
-		self.s = list(it.product(range(len(self.locs)),repeat=len(self.agents)))
+		self.s = list(it.product(self.locs.values(),repeat=self.num_agents))
 
-		# List of node adjacency
-		node_connectivity = [[] for l in self.locs]
+		# Connectivity boolean matrix
+		self.conn = np.zeros((self.num_locs,self.num_locs)).astype(np.bool_)
 		for r in self.roads:
-			node_connectivity[r[0]].append(r[1])
+			self.conn[r[0]][r[1]] = 1
 
-		# Max number of connections per node
-		nact = max([len(a) for a in node_connectivity])
-
-		# Action-transition matrix
-		self.agent_transition = np.zeros((nact,len(self.locs))).astype(np.int32)
-		for a in range(nact):
-			for s in range(len(self.locs)):
-				self.agent_transition[a][s] = node_connectivity[s][a] if len(node_connectivity[s]) > a else s
+		# Transition matrix
+		x = np.linspace(0, self.num_locs-1, self.num_locs).astype(np.int32)
+		y = np.linspace(0, self.num_locs-1, self.num_locs).astype(np.int32)
+		xv, yv = np.meshgrid(x,y)
+		self.agent_transition = np.multiply(yv,self.conn)+np.multiply(xv,np.invert(self.conn))
 
 		# Enumerating actions
-		self.a = list(it.product(range(nact),repeat=len(self.agents)))
+		self.a = list(it.product(self.locs.values(),repeat=self.num_agents))
 		self.n = len(self.s)
 		self.m = len(self.a)
 
 		print 'Flattening R...'
 		self.R = np.zeros((self.m,self.n),dtype=np.float32)
 		for si,s in enumerate(self.s):
-			for a in range(self.m):
-				for agx in range(len(self.agents)):
-					if self.goals[agx][1] == s[agx]:
+			for agx in self.agents.values():
+				if self.goals[agx][1] == s[agx]:
+					for a in range(self.m):
 						self.R[a][si] += 1.0
 
 		print 'Flattening T...'
 		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
-		for si,s in enumerate(tqdm(self.s)):
-			for ai,a in enumerate(self.a):
-				nxt = tuple([self.agent_transition[a[i]][s[i]] for i in range(len(self.agents))])
+		for ai,a in enumerate(tqdm(self.a)):
+			for si,s in enumerate(self.s):
+				nxt = tuple([self.agent_transition[a[i]][s[i]] for i in self.agents.values()])
 				self.T[ai][si][Problem.get_state_code(self.locs,nxt)] = 1.0
 
 
-	def parse_policy(self, policy):
-		px = {}
+	def parse_policy(self, raw_policy):
+		policy = []
 		for si,s in enumerate(self.s):
-			entry = []
-			for a,ai in self.agents.items():
-				pol = policy[si]
-				origin_idx = s[ai]
-				dest_idx = self.agent_transition[self.a[pol][ai]][s[ai]]
-				origin = self.problem['locs'][origin_idx]
-				dest = self.problem['locs'][dest_idx]
-				entry.append('%s: move(%s,%s)'%(a, origin, dest))
-			statex = ' and '.join(['at(%s,%s)'%(self.problem['agents'][ai],self.problem['locs'][l]) for ai,l in enumerate(s)])
-			px[statex] = entry
-		return px
+			policy_action_idx		= raw_policy[si]
+			policy_action			= self.a[policy_action_idx]
+			state_buffer			= []
+			action_buffer			= []
+			for agent_idx in self.agents.values():
+				agent_origin_idx	= s[agent_idx]
+				agent_action		= policy_action[agent_idx]
+				agent_dest_idx		= self.agent_transition[agent_action][agent_origin_idx]
+				agent				= self.decode('agents',agent_idx)
+				origin 				= self.decode('locs',agent_origin_idx)
+				dest				= self.decode('locs',agent_dest_idx)
+				action_buffer.append(['move',agent,origin,dest])
+				state_buffer.append(['at',agent,origin])
+			policy.append([state_buffer,action_buffer])
+		return policy
