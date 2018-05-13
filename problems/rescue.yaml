@@ -1,91 +1,30 @@
-
-agents: [ag_0,ag_1]
-
-locs: [loc_0_0,loc_0_1,loc_0_2,loc_0_3,loc_1_0,loc_1_1,loc_1_2,loc_1_3,loc_2_0,loc_2_1,loc_2_2,loc_2_3,loc_3_0,loc_3_1,loc_3_2,loc_3_3]
-
-at: [
-  [ag_0,loc_0_0],
-  [ag_1,loc_0_0],
-]
-
-goal: {
-  at: [
-    [ag_0,loc_3_0],
-    [ag_1,loc_3_3],
-  ]
-}
-
-actions: {
-  up: {
-    loc_0_0: loc_0_1,
-    loc_0_1: loc_0_2,
-    loc_0_2: loc_0_3,
-    loc_0_3: loc_0_3,
-    loc_1_0: loc_1_1,
-    loc_1_1: loc_1_2,
-    loc_1_2: loc_1_3,
-    loc_1_3: loc_1_3,
-    loc_2_0: loc_2_1,
-    loc_2_1: loc_2_2,
-    loc_2_2: loc_2_3,
-    loc_2_3: loc_2_3,
-    loc_3_0: loc_3_1,
-    loc_3_1: loc_3_2,
-    loc_3_2: loc_3_3,
-    loc_3_3: loc_3_3,
-  },
-  down: {
-    loc_0_0: loc_0_0,
-    loc_0_1: loc_0_0,
-    loc_0_2: loc_0_1,
-    loc_0_3: loc_0_2,
-    loc_1_0: loc_1_0,
-    loc_1_1: loc_1_0,
-    loc_1_2: loc_1_1,
-    loc_1_3: loc_1_2,
-    loc_2_0: loc_2_0,
-    loc_2_1: loc_2_0,
-    loc_2_2: loc_2_1,
-    loc_2_3: loc_2_2,
-    loc_3_0: loc_3_0,
-    loc_3_1: loc_3_0,
-    loc_3_2: loc_3_1,
-    loc_3_3: loc_3_2,
-  },
-  left: {
-    loc_0_0: loc_0_0,
-    loc_0_1: loc_0_1,
-    loc_0_2: loc_0_2,
-    loc_0_3: loc_0_3,
-    loc_1_0: loc_0_0,
-    loc_1_1: loc_0_1,
-    loc_1_2: loc_0_2,
-    loc_1_3: loc_0_3,
-    loc_2_0: loc_1_0,
-    loc_2_1: loc_1_1,
-    loc_2_2: loc_1_2,
-    loc_2_3: loc_1_3,
-    loc_3_0: loc_2_0,
-    loc_3_1: loc_2_1,
-    loc_3_2: loc_2_2,
-    loc_3_3: loc_2_3,
-  },
-  right: {
-    loc_0_0: loc_1_0,
-    loc_0_1: loc_1_1,
-    loc_0_2: loc_1_2,
-    loc_0_3: loc_1_3,
-    loc_1_0: loc_2_0,
-    loc_1_1: loc_2_1,
-    loc_1_2: loc_2_2,
-    loc_1_3: loc_2_3,
-    loc_2_0: loc_3_0,
-    loc_2_1: loc_3_1,
-    loc_2_2: loc_3_2,
-    loc_2_3: loc_3_3,
-    loc_3_0: loc_3_0,
-    loc_3_1: loc_3_1,
-    loc_3_2: loc_3_2,
-    loc_3_3: loc_3_3,
-  },
-}
+roads:
+  - [wpt_0,wpt_0]
+  - [wpt_1,wpt_1]
+  - [wpt_2,wpt_2]
+  - [wpt_3,wpt_3]
+  - [wpt_0,wpt_1]
+  - [wpt_1,wpt_0]
+  - [wpt_0,wpt_3]
+  - [wpt_3,wpt_0]
+  - [wpt_3,wpt_1]
+  - [wpt_1,wpt_3]
+  - [wpt_1,wpt_2]
+  - [wpt_2,wpt_1]
+agents:
+- ag_0
+- ag_1
+- ag_2
+goal:
+  at:
+  - - ag_0
+    - wpt_2
+  - - ag_1
+    - wpt_2
+  - - ag_2
+    - wpt_2
+locs:
+- wpt_0
+- wpt_1
+- wpt_2
+- wpt_3

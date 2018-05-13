@@ -2,13 +2,20 @@
 
 import deepdish as dd
 import numpy as np
+from numba import njit, prange
+from tqdm import tqdm
+
+@njit(parallel=True)
+def iterate_q(Q, T, R, V, d):
+	for a in prange(T.shape[0]):
+		Q[a] = R[a] + d*np.dot(T[a],V)
 
 class Mdp:
 
 	def __init__(self, T = [], R = []):
-		if T and R:
-			self.T = np.array(T)
-			self.R = np.array(R)
+		if len(T) and len(R):
+			self.T = np.array(T).astype(np.float32)
+			self.R = np.array(R).astype(np.float32)
 			self.m = self.T.shape[0]
 			self.n = self.T.shape[1]
 
@@ -41,13 +48,17 @@ class Mdp:
 		}
 		dd.io.save(filename, raw, compression='zlib')
 
-	def solve(self, discount, bound):
+	def solve(self, discount, bound, parallel=True):
 		stopping_threshold = bound*(1-discount)**2/(2*discount**2)
-		self.V = np.zeros((self.n,1))
-		while True:
+		self.V = np.zeros(self.n).astype(np.float32)
+		self.Q = np.zeros((self.m,self.n)).astype(np.float32)
+		for i in tqdm(range(1000)):
 			oldV = self.V
-			self.Q = np.array([[self.R[s][a] + discount*np.dot(self.T[a][s],self.V) for a in range(self.m)] for s in range(self.n)])
-			self.V = np.array([np.max(s) for s in self.Q])
+			if parallel:
+				iterate_q(self.Q, self.T, self.R, self.V, discount)
+			else:
+				self.Q = self.R + discount*np.dot(self.T,self.V)
+			self.V = np.max(self.Q, axis=0)
 			if np.linalg.norm(self.V-oldV, np.inf) < stopping_threshold:
 				break
-		self.p = np.array([np.int(np.argmax(s)) for s in self.Q])
+		self.p = np.argmax(self.Q, axis=0)

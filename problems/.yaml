@@ -1,0 +1,32 @@
+actions:
+  down:
+    loc_0_0: loc_0_0
+    loc_0_1: loc_0_0
+    loc_1_0: loc_1_0
+    loc_1_1: loc_1_0
+  left:
+    loc_0_0: loc_0_0
+    loc_0_1: loc_0_1
+    loc_1_0: loc_0_0
+    loc_1_1: loc_0_1
+  right:
+    loc_0_0: loc_1_0
+    loc_0_1: loc_1_1
+    loc_1_0: loc_1_0
+    loc_1_1: loc_1_1
+  up:
+    loc_0_0: loc_0_1
+    loc_0_1: loc_0_1
+    loc_1_0: loc_1_1
+    loc_1_1: loc_1_1
+agents:
+- ag_0
+goal:
+  at:
+  - - ag_0
+    - loc_1_1
+locs:
+- loc_0_0
+- loc_0_1
+- loc_1_0
+- loc_1_1
