@@ -24,29 +24,26 @@ class Problem:
 		# Lists
 		self.locs	= Problem.encodex(self.problem['locs'])
 		self.agents	= Problem.encodex(self.problem['agents'])
-		self.items	= {k:v for d in [self.locs,self.agents] for k,v in d.items()}
 
 		# Relations
-		self.roads	= Problem.encodex(self.problem['roads'],self.items)
-		self.goals	= Problem.encodex(self.problem['goal']['at'],self.items)
+		items		= {k:v for d in [self.locs,self.agents] for k,v in d.items()}
+		self.roads	= Problem.encodex(self.problem['roads'],items)
+		self.goals	= Problem.encodex(self.problem['goal']['at'],items)
 
 		# Dataset
-		self.els = {
+		self.data = {
 			'locs':		Problem.encodex(self.problem['locs']),
 			'agents':	Problem.encodex(self.problem['agents']),
-			'items':	{k:v for d in [self.locs,self.agents] for k,v in d.items()},
 		}
 
 		self.num_agents	= len(self.agents)
 		self.num_locs	= len(self.locs)
 
-
-
 	def encode(self, cls, name):
-		return self.els[cls][name]
+		return self.data[cls][name]
 
 	def decode(self, cls, num):
-		return self.els[cls].keys()[num]
+		return self.data[cls].keys()[num]
 
 	def __init__(self,filename):
 
@@ -54,9 +51,6 @@ class Problem:
 		with open(filename,'r') as f:
 			self.problem = yaml.load(f.read())
 		self.encoder()
-
-		# Enumerating states
-		self.s = list(it.product(self.locs.values(),repeat=self.num_agents))
 
 		# Connectivity boolean matrix
 		self.conn = np.zeros((self.num_locs,self.num_locs)).astype(np.bool_)
@@ -69,7 +63,8 @@ class Problem:
 		xv, yv = np.meshgrid(x,y)
 		self.agent_transition = np.multiply(yv,self.conn)+np.multiply(xv,np.invert(self.conn))
 
-		# Enumerating actions
+		# Enumerating states and actions
+		self.s = list(it.product(self.locs.values(),repeat=self.num_agents))
 		self.a = list(it.product(self.locs.values(),repeat=self.num_agents))
 		self.n = len(self.s)
 		self.m = len(self.a)
@@ -77,8 +72,8 @@ class Problem:
 		print 'Flattening R...'
 		self.R = np.zeros((self.m,self.n),dtype=np.float32)
 		for si,s in enumerate(self.s):
-			for agx in self.agents.values():
-				if self.goals[agx][1] == s[agx]:
+			for agent_idx in self.agents.values():
+				if self.goals[agent_idx][1] == s[agent_idx]:
 					for a in range(self.m):
 						self.R[a][si] += 1.0
 
@@ -97,6 +92,7 @@ class Problem:
 			policy_action			= self.a[policy_action_idx]
 			state_buffer			= []
 			action_buffer			= []
+
 			for agent_idx in self.agents.values():
 				agent_origin_idx	= s[agent_idx]
 				agent_action		= policy_action[agent_idx]
@@ -107,4 +103,5 @@ class Problem:
 				action_buffer.append(['move',agent,origin,dest])
 				state_buffer.append(['at',agent,origin])
 			policy.append([state_buffer,action_buffer])
+
 		return policy
