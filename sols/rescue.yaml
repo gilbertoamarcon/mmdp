@@ -1,256 +1,500 @@
 at(ag_0,wpt_0) and at(ag_1,wpt_0) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_0) and at(ag_1,wpt_0) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_0) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_0) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_0,wpt_1)'
 - 'ag_1: move(wpt_0,wpt_1)'
-- 'ag_0: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_0) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_1,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_0) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_0) and at(ag_1,wpt_1) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_1) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_1) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_0,wpt_1)'
 - 'ag_1: move(wpt_1,wpt_2)'
-- 'ag_0: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_0) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_2,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_1) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_0) and at(ag_1,wpt_2) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_2) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_2) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_0,wpt_1)'
 - 'ag_1: move(wpt_2,wpt_2)'
-- 'ag_0: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_0) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_3,wpt_1)'
+at(ag_0,wpt_0) and at(ag_1,wpt_2) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_0) and at(ag_1,wpt_3) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_3) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_0) and at(ag_1,wpt_3) and at(ag_2,wpt_3):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_0) and at(ag_1,wpt_3) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_4) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_0) and at(ag_1,wpt_4) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_4) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_0) and at(ag_1,wpt_4) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_0) and at(ag_1,wpt_4) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_0,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_0) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_1) and at(ag_1,wpt_0) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_0) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_0) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_1,wpt_2)'
 - 'ag_1: move(wpt_0,wpt_1)'
-- 'ag_0: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_1) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_1,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_0) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_1) and at(ag_1,wpt_1) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_1) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_1) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_1,wpt_2)'
 - 'ag_1: move(wpt_1,wpt_2)'
-- 'ag_0: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_1) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_2,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_1) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_1) and at(ag_1,wpt_2) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_2) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_2) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_1,wpt_2)'
 - 'ag_1: move(wpt_2,wpt_2)'
-- 'ag_0: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_1) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_3,wpt_1)'
+at(ag_0,wpt_1) and at(ag_1,wpt_2) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_1) and at(ag_1,wpt_3) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_3) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_1) and at(ag_1,wpt_3) and at(ag_2,wpt_3):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_1) and at(ag_1,wpt_3) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_4) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_1) and at(ag_1,wpt_4) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_4) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_1) and at(ag_1,wpt_4) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_1) and at(ag_1,wpt_4) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_1,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_0) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_2) and at(ag_1,wpt_0) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_0) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_0) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_2,wpt_2)'
 - 'ag_1: move(wpt_0,wpt_1)'
-- 'ag_0: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_2) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_1,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_0) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_2) and at(ag_1,wpt_1) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_1) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_1) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_2,wpt_2)'
 - 'ag_1: move(wpt_1,wpt_2)'
-- 'ag_0: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_2) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_2,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_1) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_2) and at(ag_1,wpt_2) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_2) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_2) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_2,wpt_2)'
 - 'ag_1: move(wpt_2,wpt_2)'
-- 'ag_0: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_2) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_3,wpt_1)'
+at(ag_0,wpt_2) and at(ag_1,wpt_2) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_2) and at(ag_1,wpt_3) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_3) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_2) and at(ag_1,wpt_3) and at(ag_2,wpt_3):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_2) and at(ag_1,wpt_3) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_4) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_2) and at(ag_1,wpt_4) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_4) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_2) and at(ag_1,wpt_4) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_2) and at(ag_1,wpt_4) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_2,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_0) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_3) and at(ag_1,wpt_0) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_0) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_0) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_3,wpt_1)'
 - 'ag_1: move(wpt_0,wpt_1)'
-- 'ag_0: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_3) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_1,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_0) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_3) and at(ag_1,wpt_1) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_1) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_1) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_3,wpt_1)'
 - 'ag_1: move(wpt_1,wpt_2)'
-- 'ag_0: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_3) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_2,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_1) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_3) and at(ag_1,wpt_2) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_2) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_2) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_3,wpt_1)'
 - 'ag_1: move(wpt_2,wpt_2)'
-- 'ag_0: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
-at(ag_0,wpt_3) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
-- 'ag_1: move(wpt_3,wpt_1)'
+at(ag_0,wpt_3) and at(ag_1,wpt_2) and at(ag_2,wpt_4):
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_0,wpt_1)'
 at(ag_0,wpt_3) and at(ag_1,wpt_3) and at(ag_2,wpt_1):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_1,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_3) and at(ag_2,wpt_2):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_2,wpt_2)'
 at(ag_0,wpt_3) and at(ag_1,wpt_3) and at(ag_2,wpt_3):
-- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
 - 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_3) and at(ag_1,wpt_3) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_4) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_3) and at(ag_1,wpt_4) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_4) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_3) and at(ag_1,wpt_4) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_3) and at(ag_1,wpt_4) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_3,wpt_1)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_0) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_0) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_0) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_0) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_0) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_0,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_1) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_1) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_1) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_1) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_1) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_1,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_2) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_2) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_2) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_2) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_2) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_2,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_3) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_3) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_3) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_3) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_3) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_3,wpt_1)'
+- 'ag_2: move(wpt_4,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_4) and at(ag_2,wpt_0):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_0,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_4) and at(ag_2,wpt_1):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_1,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_4) and at(ag_2,wpt_2):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_2,wpt_2)'
+at(ag_0,wpt_4) and at(ag_1,wpt_4) and at(ag_2,wpt_3):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_3,wpt_1)'
+at(ag_0,wpt_4) and at(ag_1,wpt_4) and at(ag_2,wpt_4):
+- 'ag_0: move(wpt_4,wpt_2)'
+- 'ag_1: move(wpt_4,wpt_2)'
+- 'ag_2: move(wpt_4,wpt_2)'

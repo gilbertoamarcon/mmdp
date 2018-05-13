@@ -3,6 +3,7 @@ roads:
   - [wpt_1,wpt_1]
   - [wpt_2,wpt_2]
   - [wpt_3,wpt_3]
+  - [wpt_4,wpt_4]
   - [wpt_0,wpt_1]
   - [wpt_1,wpt_0]
   - [wpt_0,wpt_3]
@@ -11,6 +12,8 @@ roads:
   - [wpt_1,wpt_3]
   - [wpt_1,wpt_2]
   - [wpt_2,wpt_1]
+  - [wpt_2,wpt_4]
+  - [wpt_4,wpt_2]
 agents:
 - ag_0
 - ag_1
@@ -28,3 +31,4 @@ locs:
 - wpt_1
 - wpt_2
 - wpt_3
+- wpt_4
