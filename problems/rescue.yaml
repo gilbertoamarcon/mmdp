@@ -4,6 +4,9 @@ roads:
   - [wpt_2,wpt_2]
   - [wpt_3,wpt_3]
   - [wpt_4,wpt_4]
+  - [wpt_5,wpt_5]
+  - [wpt_6,wpt_6]
+  - [wpt_7,wpt_7]
   - [wpt_0,wpt_1]
   - [wpt_1,wpt_0]
   - [wpt_0,wpt_3]
@@ -14,21 +17,33 @@ roads:
   - [wpt_2,wpt_1]
   - [wpt_2,wpt_4]
   - [wpt_4,wpt_2]
+  - [wpt_3,wpt_5]
+  - [wpt_5,wpt_3]
+  - [wpt_6,wpt_5]
+  - [wpt_5,wpt_6]
+  - [wpt_6,wpt_7]
+  - [wpt_7,wpt_6]
+  - [wpt_3,wpt_7]
+  - [wpt_7,wpt_3]
+types:
+  - uav
+  - rover
 agents:
-- ag_0
-- ag_1
-- ag_2
+  - [ag_0,uav]
+  - [ag_1,uav]
+  - [ag_2,rover]
 goal:
-  at:
-  - - ag_0
-    - wpt_2
-  - - ag_1
-    - wpt_2
-  - - ag_2
-    - wpt_2
+  wpt_5:
+    - uav
+    - rover
+  wpt_4:
+    - uav
 locs:
 - wpt_0
 - wpt_1
 - wpt_2
 - wpt_3
 - wpt_4
+- wpt_5
+- wpt_6
+- wpt_7

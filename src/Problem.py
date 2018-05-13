@@ -13,7 +13,11 @@ class Problem:
 		if code is None:
 			return OrderedDict([(e,i) for i,e in enumerate(data)])
 		else:
-			return [[code[e] for e in d] for d in data]
+			if type(data) is list:
+				return [Problem.encodex(d,code) for d in data]
+			if type(data) is dict:
+				return {Problem.encodex(k,code):Problem.encodex(v,code) for k,v in data.items()}
+			return code[data]
 
 	@staticmethod
 	def get_state_code(locs,goal_state):
@@ -21,21 +25,26 @@ class Problem:
 
 	def encoder(self):
 
+
 		# Lists
-		self.locs	= Problem.encodex(self.problem['locs'])
-		self.agents	= Problem.encodex(self.problem['agents'])
+		self.types		= Problem.encodex(self.problem['types'])
+		self.locs		= Problem.encodex(self.problem['locs'])
+		self.agents		= Problem.encodex([a[0] for a in self.problem['agents']])
 
 		# Relations
-		items		= {k:v for d in [self.locs,self.agents] for k,v in d.items()}
-		self.roads	= Problem.encodex(self.problem['roads'],items)
-		self.goals	= Problem.encodex(self.problem['goal']['at'],items)
+		items			= {k:v for d in [self.types,self.locs,self.agents] for k,v in d.items()}
+		self.roads		= Problem.encodex(self.problem['roads'],items)
+		self.goals		= Problem.encodex(self.problem['goal'],items)
+		self.agent_cls	= Problem.encodex({a[0]:a[1] for a in self.problem['agents']},items)
 
 		# Dataset
 		self.data = {
+			'types':	Problem.encodex(self.problem['types']),
 			'locs':		Problem.encodex(self.problem['locs']),
-			'agents':	Problem.encodex(self.problem['agents']),
+			'agents':	Problem.encodex([a[0] for a in self.problem['agents']]),
 		}
 
+		self.num_types	= len(self.types)
 		self.num_agents	= len(self.agents)
 		self.num_locs	= len(self.locs)
 
@@ -72,10 +81,12 @@ class Problem:
 		print 'Flattening R...'
 		self.R = np.zeros((self.m,self.n),dtype=np.float32)
 		for si,s in enumerate(self.s):
-			for agent_idx in self.agents.values():
-				if self.goals[agent_idx][1] == s[agent_idx]:
-					for a in range(self.m):
-						self.R[a][si] += 1.0
+			cl = {l:[] for l in s}
+			for agent_idx,l in enumerate(s):
+				cl[l].append(self.agent_cls[agent_idx])
+			ctr = sum([gi in cl and not sum([x not in cl[gi] for x in g]) for gi,g in self.goals.items()])
+			for a in range(self.m):
+				self.R[a][si] = ctr
 
 		print 'Flattening T...'
 		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
@@ -100,8 +111,12 @@ class Problem:
 				agent				= self.decode('agents',agent_idx)
 				origin 				= self.decode('locs',agent_origin_idx)
 				dest				= self.decode('locs',agent_dest_idx)
-				action_buffer.append(['move',agent,origin,dest])
+				if origin == dest:
+					action = ['stay',agent,origin]
+				else:
+					action = ['move',agent,origin,dest]
 				state_buffer.append(['at',agent,origin])
+				action_buffer.append(action)
 			policy.append([state_buffer,action_buffer])
 
 		return policy
