@@ -5,6 +5,9 @@ from tqdm import tqdm
 import numpy as np
 import itertools as it
 import yaml
+import networkx as nx
+import matplotlib.pyplot as plt
+
 
 class Problem:
 
@@ -120,3 +123,45 @@ class Problem:
 			policy.append([state_buffer,action_buffer])
 
 		return policy
+
+	def plot(self, policy, file_prefix):
+
+		print 'Generating and storing plots...'
+		for i,p in enumerate(tqdm(policy)):
+
+			agts = [e[2] for e in p[0]]
+
+			node_color='w'
+			node_size=3000
+			font_size=8
+
+			G = nx.Graph()
+			for node in self.problem['locs']:
+				G.add_node(node)
+
+			for edge in self.problem['roads']:
+				G.add_edge(edge[0], edge[1])
+
+			# draw graph
+			pos = nx.spring_layout(G,random_state=0)
+			nx.draw(G, pos, node_color=node_color, node_size=node_size)
+
+			nx.draw_networkx_nodes(
+									G,
+									pos,
+									nodelist=self.problem['goal'].keys(),
+									node_color='r',
+									node_size=node_size,
+									alpha=0.5
+								)
+			labels = {l:l for l in self.problem['locs'] if l not in agts}
+			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
+			agx = {e:[] for e in agts}
+			for e in p[1]:
+				aux = '%s>%s'%(e[1],e[3]) if len(e) == 4 else e[1]
+				agx[e[2]].append(aux)
+			agents = {k:'\n'.join([k]+v) for k,v in agx.items()}
+			nx.draw_networkx_labels(G, pos, agents, font_size=font_size)
+
+			plt.savefig(file_prefix%i)
+			plt.clf()

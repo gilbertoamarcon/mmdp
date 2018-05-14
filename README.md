@@ -19,3 +19,8 @@ Analyse the results of the policy file ```sols/rescue.h5```:
 ```
 python src/parse-policy.py -i problems/rescue.yaml -s sols/rescue.h5 -o sols/rescue.yaml
 ```
+
+Analyse the results of the policy file ```sols/rescue.h5```:
+```
+python src/plot.py -i problems/rescue.yaml -s sols/rescue.h5 -o plots/graph_%09d.svg
+```
