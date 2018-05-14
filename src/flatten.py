@@ -24,6 +24,7 @@ def main():
 	args = parser.parse_args()
 
 	problem = Problem(args.input)
+	problem.flatten()
 
 	mdp = Mdp(T=problem.T,R=problem.R)
 	mdp.store_problem(args.output)

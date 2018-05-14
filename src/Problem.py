@@ -23,12 +23,7 @@ class Problem:
 				return {Problem.encodex(k,code):Problem.encodex(v,code) for k,v in data.items()}
 			return code[data]
 
-	@staticmethod
-	def get_state_code(locs,goal_state):
-		return sum([g*(len(locs)**i) for i,g in enumerate(reversed(goal_state))])
-
 	def encoder(self):
-
 
 		# Lists
 		self.types		= Problem.encodex(self.problem['types'])
@@ -52,9 +47,6 @@ class Problem:
 		self.num_agents	= len(self.agents)
 		self.num_locs	= len(self.locs)
 
-	def encode(self, cls, name):
-		return self.data[cls][name]
-
 	def decode(self, cls, num):
 		return self.data[cls].keys()[num]
 
@@ -66,15 +58,15 @@ class Problem:
 		self.encoder()
 
 		# Connectivity boolean matrix
-		self.conn = np.zeros((self.num_locs,self.num_locs)).astype(np.bool_)
+		conn = np.zeros((self.num_locs,self.num_locs)).astype(np.bool_)
 		for r in self.roads:
-			self.conn[r[0]][r[1]] = 1
+			conn[r[0]][r[1]] = 1
 
 		# Transition matrix
 		x = np.linspace(0, self.num_locs-1, self.num_locs).astype(np.int32)
 		y = np.linspace(0, self.num_locs-1, self.num_locs).astype(np.int32)
 		xv, yv = np.meshgrid(x,y)
-		self.agent_transition = np.multiply(yv,self.conn)+np.multiply(xv,np.invert(self.conn))
+		self.agent_transition = np.multiply(yv,conn)+np.multiply(xv,np.invert(conn))
 
 		# Enumerating states and actions
 		self.s = list(it.product(self.locs.values(),repeat=self.num_agents))
@@ -82,23 +74,30 @@ class Problem:
 		self.n = len(self.s)
 		self.m = len(self.a)
 
+	def flatten(self):
+		
 		print 'Flattening R...'
 		self.R = np.zeros((self.m,self.n),dtype=np.float32)
 		for si,s in enumerate(self.s):
-			cl = {l:[] for l in s}
+			agent_classes_on_loc = {l:[] for l in s}
 			for agent_idx,l in enumerate(s):
-				cl[l].append(self.agent_cls[agent_idx])
-			ctr = sum([gi in cl and not sum([x not in cl[gi] for x in g]) for gi,g in self.goals.items()])
-			for a in range(self.m):
-				self.R[a][si] = ctr
+				agent_classes_on_loc[l].append(self.agent_cls[agent_idx])
+			ctr = sum([gi in agent_classes_on_loc and not sum([x not in agent_classes_on_loc[gi] for x in g]) for gi,g in self.goals.items()])
+			self.R[si][si] = ctr
 
 		print 'Flattening T...'
 		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
 		for ai,a in enumerate(tqdm(self.a)):
 			for si,s in enumerate(self.s):
-				nxt = tuple([self.agent_transition[a[i]][s[i]] for i in self.agents.values()])
-				self.T[ai][si][Problem.get_state_code(self.locs,nxt)] = 1.0
-
+				sn_prob = []
+				for i in self.agents.values():
+					agent_next_loc_prob = self.problem['error']*np.ones(self.num_locs,dtype=np.float32)/(self.num_locs-1)
+					agent_next_loc_prob[self.agent_transition[a[i]][s[i]]] = 1.0-self.problem['error']
+					sn_prob.append(agent_next_loc_prob)
+				for sni,sn in enumerate(self.s):
+					self.T[ai][si][sni] = sum([sn_prob[i][sn[i]] for i in self.agents.values()])
+				norm = sum(self.T[ai][si])
+				self.T[ai][si] /= norm
 
 	def parse_policy(self, raw_policy):
 		policy = []

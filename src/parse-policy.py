@@ -37,8 +37,6 @@ def main():
 	policy = problem.parse_policy(raw_policy)
 	with open(args.output, 'w') as f:
 		yaml.dump(policy, f)
-		# yaml.dump(policy, f, default_flow_style=False)
-		# yaml.dump(policy, f, default_flow_style=True)
 
 
 if __name__ == "__main__":
