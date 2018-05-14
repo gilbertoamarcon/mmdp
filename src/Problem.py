@@ -5,6 +5,7 @@ from tqdm import tqdm
 import numpy as np
 import itertools as it
 import yaml
+import re
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -135,14 +136,14 @@ class Problem:
 			node_size=3000
 			font_size=8
 
+			# Building the graph
 			G = nx.Graph()
 			for node in self.problem['locs']:
 				G.add_node(node)
-
 			for edge in self.problem['roads']:
 				G.add_edge(edge[0], edge[1])
 
-			# draw graph
+			# Draw the graph structure
 			pos = nx.spring_layout(G,random_state=0)
 			nx.draw(G, pos, node_color=node_color, node_size=node_size)
 
@@ -154,13 +155,18 @@ class Problem:
 									node_size=node_size,
 									alpha=0.5
 								)
-			labels = {l:l for l in self.problem['locs'] if l not in agts}
+			# Regular node labels
+			labels = {l:'$%s$'%l for l in self.problem['locs'] if l not in agts}
 			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
+
+			# Agent labels
 			agx = {e:[] for e in agts}
 			for e in p[1]:
 				aux = '%s>%s'%(e[1],e[3]) if len(e) == 4 else e[1]
 				agx[e[2]].append(aux)
+
 			agents = {k:'\n'.join([k]+v) for k,v in agx.items()}
+			agents = {k:re.sub(r'([A-Za-z_>]+)(\d+)', r'$\1{\2}$', v) for k,v in agents.items()}
 			nx.draw_networkx_labels(G, pos, agents, font_size=font_size)
 
 			plt.savefig(file_prefix%i)
