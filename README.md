@@ -1,9 +1,5 @@
 # Mdp
 
-Synthesize MDP problem parameters ```problems/rescue.yaml```:
-```
-python src/synth.py -o problems/rescue.yaml
-```
 
 Flatten MDP problem using parameters in the ```problems/rescue.yaml``` file into  ```problems/rescue.h5```:
 ```
