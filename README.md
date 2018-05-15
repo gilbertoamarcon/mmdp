@@ -20,3 +20,7 @@ Analyse the results of the policy file ```sols/rescue.h5```:
 ```
 python src/plot.py -i problems/rescue.yaml -s sols/rescue.h5 -o plots/graph_%09d.svg
 ```
+
+```
+python src/merge.py -i problems/rescue.yaml -s pols/rescue-a.yaml pols/rescue-b.yaml -o pols/rescue-merge.yaml
+```

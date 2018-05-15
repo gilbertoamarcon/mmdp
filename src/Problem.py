@@ -104,8 +104,8 @@ class Problem:
 		for si,s in enumerate(self.s):
 			policy_action_idx		= raw_policy[si]
 			policy_action			= self.a[policy_action_idx]
-			state_buffer			= []
-			action_buffer			= []
+			state_buffer			= {}
+			action_buffer			= {}
 
 			for agent_idx in self.agents.values():
 				agent_origin_idx	= s[agent_idx]
@@ -115,12 +115,12 @@ class Problem:
 				origin 				= self.decode('locs',agent_origin_idx)
 				dest				= self.decode('locs',agent_dest_idx)
 				if origin == dest:
-					action = ['stay',agent,origin]
+					action = ['stay',origin]
 				else:
-					action = ['move',agent,origin,dest]
-				state_buffer.append(['at',agent,origin])
-				action_buffer.append(action)
-			policy.append([state_buffer,action_buffer])
+					action = ['move',origin,dest]
+				state_buffer[agent] = ['at',origin]
+				action_buffer[agent] = action
+			policy.append({'state':state_buffer,'action':action_buffer})
 
 		return policy
 
@@ -129,7 +129,7 @@ class Problem:
 		print 'Generating and storing plots...'
 		for i,p in enumerate(tqdm(policy)):
 
-			agts = [e[2] for e in p[0]]
+			agts = [p['state'][e][1] for e in p['state']]
 
 			node_color='w'
 			node_size=3000
@@ -160,9 +160,9 @@ class Problem:
 
 			# Agent labels
 			agx = {e:[] for e in agts}
-			for e in p[1]:
-				aux = '%s>%s'%(e[1],e[3]) if len(e) == 4 else e[1]
-				agx[e[2]].append(aux)
+			for agent,action in p['action'].items():
+				aux = '%s>%s'%(agent,action[2]) if len(action) == 3 else agent
+				agx[action[1]].append(aux)
 
 			agents = {k:'\n'.join([k]+v) for k,v in agx.items()}
 			agents = {k:re.sub(r'([A-Za-z_>]+)(\d+)', r'$\1{\2}$', v) for k,v in agents.items()}
