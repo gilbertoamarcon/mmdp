@@ -17,5 +17,6 @@ for t in $(cat $temp/problem-coalitions); do
 done
 sols=$(for t in $(cat $temp/problem-coalitions); do echo $temp/solution-$t.yaml; done)
 python src/merge.py -i $prob -s $sols -o $sol
+rm $temp/*
 
 
