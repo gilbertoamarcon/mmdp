@@ -31,6 +31,7 @@ def main():
 		)
 	args = parser.parse_args()
 
+
 	sols = {s:None for s in args.input_sols}
 
 	problem = Problem(args.input_problem)
