@@ -2,6 +2,5 @@ temp/*
 plots/*
 *.pyc
 *.svg
-*.png
 *.eps
 *~
