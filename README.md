@@ -34,3 +34,5 @@ Solving problem ```problems/rescue.yaml``` using Coalition Formation and Plannin
 ```
 ./scripts/cfp.sh problems/rescue.yaml sols/rescue.yaml
 ```
+
+![pipeline](cfp-complete.dot.png?raw=true "Data Flow")
