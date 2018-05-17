@@ -3,8 +3,6 @@
 import argparse as ap
 from copy import deepcopy
 from Problem import *
-import itertools as it
-
 
 # Main
 def main():

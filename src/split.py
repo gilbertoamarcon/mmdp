@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
 import argparse as ap
-from copy import deepcopy
-import itertools as it
 import yaml
+from copy import deepcopy
 
 # Main
 def main():
@@ -20,13 +19,13 @@ def main():
 			'-c','--input_cf',
 			nargs='?',
 			required=True,
-			help='Input CF file (YAML filename).'
+			help='Input Coalition-Task file (YAML filename).'
 		)
 	parser.add_argument(
 			'-o','--output_prefix',
 			nargs='?',
 			required=True,
-			help='Prefix.'
+			help='Coalition-Task Problem Prefix.'
 		)
 	args = parser.parse_args()
 
@@ -37,13 +36,13 @@ def main():
 	with open(args.input_cf,'r') as f:
 		cf = yaml.load(f.read())
 
-
 	for ct in cf:
 		prob = deepcopy(problem)
 		prob['goal'] = {ct:problem['goal'][ct]}
 		prob['agents'] = [a for a in problem['agents'] if a[0] in cf[ct]]
 		with open(args.output_prefix+ct+'.yaml', 'w') as f:
 			yaml.dump(prob, f)
+
 	with open(args.output_prefix+'coalitions', 'w') as f:
 		f.write(' '.join(cf.keys()))
 

@@ -19,7 +19,7 @@ def main():
 			'-s','--input_solution',
 			nargs='?',
 			required=True,
-			help='Input solution file (HDF5 filename).'
+			help='Input solution file (YAML filename).'
 		)
 	parser.add_argument(
 			'-o','--output',
@@ -29,12 +29,10 @@ def main():
 		)
 	args = parser.parse_args()
 
-	mdp = Mdp()
-	mdp.load_policy(args.input_solution)
-	raw_policy = mdp.p
+	with open(args.input_solution,'r') as f:
+		policy = yaml.load(f.read())
 
 	problem = Problem(args.input_problem)
-	policy = problem.parse_policy(raw_policy)
 	problem.plot(policy,args.output)
 
 
