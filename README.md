@@ -3,24 +3,29 @@
 ## Standalone Module Usage
 
 
-Flatten MDP problem using parameters in the ```problems/rescue.yaml``` file into  ```temp/problem-rescue.h5```:
+Flatten MDP problem using parameters in the ```problems/rescue.yaml``` file into  ```temp/problem.h5```:
 ```
-python src/flatten.py -i problems/rescue.yaml -o temp/problem-rescue.h5
-```
-
-Solve the flat MDP problem ```temp/problem-rescue.h5``` with discount rate ```0.9```, and store policy to file ```temp/policy-rescue.h5```:
-```
-python src/solve.py -i temp/problem-rescue.h5 -o temp/policy-rescue.h5 -d 0.9
+python src/flatten.py -i problems/rescue.yaml -o temp/problem.h5
 ```
 
-Parse the policy file ```temp/policy-rescue.h5``` into a high-level policy file ```sols/rescue.yaml```:
+Solve the flat MDP problem ```temp/problem.h5``` with discount rate ```0.9```, and store policy to file ```temp/policy.h5```:
 ```
-python src/parse-policy.py -i problems/rescue.yaml -s temp/policy-rescue.h5 -o sols/rescue.yaml
+python src/solve.py -i temp/problem.h5 -o temp/policy.h5 -d 0.9
+```
+
+Parse the policy file ```temp/policy.h5``` into a high-level policy file ```sols/rescue.yaml```:
+```
+python src/parse-policy.py -i problems/rescue.yaml -s temp/policy.h5 -o sols/rescue.yaml
 ```
 
 Plot the results of the policy file ```sols/rescue.yaml```:
 ```
 python src/plot.py -i problems/rescue.yaml -s sols/rescue.yaml -o plots/graph_%09d.svg
+```
+
+Simulate the policy file ```sols/rescue.yaml```:
+```
+python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml
 ```
 
 ## Script Usage

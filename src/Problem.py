@@ -79,11 +79,12 @@ class Problem:
 		print 'Flattening R...'
 		self.R = np.zeros((self.m,self.n),dtype=np.float32)
 		for si,s in enumerate(self.s):
-			agent_classes_on_loc = {l:[] for l in s}
-			for agent_idx,l in enumerate(s):
-				agent_classes_on_loc[l].append(self.agent_cls[agent_idx])
-			ctr = sum([gi in agent_classes_on_loc and not sum([x not in agent_classes_on_loc[gi] for x in g]) for gi,g in self.goals.items()])
-			self.R[si][si] = ctr
+			for ai,a in enumerate(self.a):
+				agent_classes_on_loc = {l:[] for l in s}
+				for agent_idx,l in enumerate(s):
+					if a[agent_idx] == l:
+						agent_classes_on_loc[l].append(self.agent_cls[agent_idx])
+				self.R[ai][si] = sum([gi in agent_classes_on_loc and not sum([x not in agent_classes_on_loc[gi] for x in g]) for gi,g in self.goals.items()])
 
 		print 'Flattening T...'
 		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
@@ -160,9 +161,9 @@ class Problem:
 
 			# Agent labels
 			agx = {e:[] for e in agts}
-			for agent,action in p['action'].items():
-				aux = '%s>%s'%(agent,action[2]) if len(action) == 3 else agent
-				agx[action[1]].append(aux)
+			for agent in self.agents.keys():
+				aux = '%s>%s'%(agent,p['action'][agent][2]) if len(p['action'][agent]) == 3 else agent
+				agx[p['action'][agent][1]].append(aux)
 
 			agents = {k:'\n'.join([k]+v) for k,v in agx.items()}
 			agents = {k:re.sub(r'([A-Za-z_>]+)(\d+)', r'$\1{\2}$', v) for k,v in agents.items()}

@@ -32,7 +32,7 @@ def main():
 			'-b','--bound',
 			nargs='?',
 			type=float,
-			default=0.001,
+			default=0.0001,
 			help='The bound from the optimal.'
 		)
 	args = parser.parse_args()
