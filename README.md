@@ -25,7 +25,7 @@ python src/plot.py -i problems/rescue.yaml -s sols/rescue.yaml -o plots/graph_%0
 
 Simulate the policy file ```sols/rescue.yaml```:
 ```
-python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml
+python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml -o sim/graph_%09d.svg
 ```
 
 ## Script Usage

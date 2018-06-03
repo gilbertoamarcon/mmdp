@@ -4,6 +4,7 @@ import argparse as ap
 from Mdp import *
 from Problem import *
 import random
+
 # Main
 def main():
 
@@ -21,7 +22,15 @@ def main():
 			required=True,
 			help='Input solution file (YAML filename).'
 		)
+	parser.add_argument(
+			'-o','--output',
+			nargs='?',
+			required=True,
+			help='Output image file (directory and file prefix).'
+		)
 	args = parser.parse_args()
+
+	prob = Problem(args.input_problem)
 
 	with open(args.input_problem,'r') as f:
 		problem = yaml.load(f.read())
@@ -49,21 +58,32 @@ def main():
 		print '%s: %s' % (a,agent_states[a])
 
 	print ''
-	for i in range(100):
+	print 'Steps'
+	for i in range(10):
+
+		# State tuple
 		state = tuple([agent_states[a] for a in agents])
-		goal = {s:[] for s in state}
+
+		# Types of agent on each state
+		types_on_state = {s:[] for s in state}
 		for a in agents:
-			goal[agent_states[a]].append(agent_classes[a])
+			types_on_state[agent_states[a]].append(agent_classes[a])
+
+		# Action at this state 
 		pol = dict_pol[state]
 		agent_states = {a:pol[a][-1] for a in agents}
+
+		# Computing rewards
 		rwd = 0
 		for g in problem['goal']:
-			if g in goal:
+			if g in types_on_state:
 				goal_set = set(problem['goal'][g])
-				current_set = set(goal[g])
+				current_set = set(types_on_state[g])
 				if not goal_set - current_set:
 					rwd += 1
-		print i, state, goal, pol, rwd
+
+		stx =  prob.s.index(tuple([prob.data['locs'][s] for s in state]))
+		print i, stx, state, types_on_state, rwd
 
 
 
