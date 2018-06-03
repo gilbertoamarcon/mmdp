@@ -131,8 +131,8 @@ class Problem:
 		regular_node_color	= 'w'
 		goal_node_color		= 'g'
 		goal_node_alpha		= 0.5
-		node_size			= 10000
-		font_size			= 10
+		node_size			= 25000
+		font_size			= 18
 		figsize				= (14,10)
 
 		print self.goals
@@ -179,15 +179,10 @@ class Problem:
 				# Location name and goal requirements
 				labels[loc] = '$%s%s$'%(loc,'(%s)'%','.join(self.decode('types',self.agent_cls[k]) for k in self.goals[l]) if l in self.goals else '')
 
-				# Locations with agents on
-				if loc in agent_locs:
-
-					# Agent keys at loc
-					keys = [k for k,v in enumerate(agent_locs) if v == loc]
-
-					# For each agent at loc
-					for a,c in [(self.decode('agents',k),self.decode('types',self.agent_cls[k])) for k in keys]:
-						labels[loc] += '\n$%s(%s)>%s$'%(a,c,p['action'][a][2]) if len(p['action'][a]) == 3 else '\n$%s(%s)$'%(a,c)
+				# For each agent at loc
+				keys = [k for k,v in enumerate(agent_locs) if v == loc]
+				for a,c in [(self.decode('agents',k),self.decode('types',self.agent_cls[k])) for k in keys]:
+					labels[loc] += '\n$%s(%s)>%s$'%(a,c,p['action'][a][-1]) if len(p['action'][a]) == 3 else '\n$%s(%s)$'%(a,c)
 
 			# Adding Labels
 			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
