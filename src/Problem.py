@@ -133,10 +133,11 @@ class Problem:
 			agts = [p['state'][e][1] for e in p['state']]
 
 			node_color='w'
-			node_size=3000
-			font_size=8
+			node_size=10000
+			font_size=16
 
 			# Building the graph
+			plt.figure(figsize=(14,10)) 
 			G = nx.Graph()
 			for node in self.problem['locs']:
 				G.add_node(node)
@@ -171,3 +172,4 @@ class Problem:
 
 			plt.savefig(file_prefix%i)
 			plt.clf()
+			plt.close()
