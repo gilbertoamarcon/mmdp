@@ -5,7 +5,7 @@ from tqdm import tqdm
 import numpy as np
 import itertools as it
 import yaml
-import re
+import random
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -135,8 +135,6 @@ class Problem:
 		font_size			= 18
 		figsize				= (14,10)
 
-		print self.goals
-
 		# For each state
 		print 'Generating and storing plots...'
 		for i,p in enumerate(tqdm(policy)):
@@ -191,3 +189,52 @@ class Problem:
 			plt.savefig(file_prefix%i)
 			plt.clf()
 			plt.close()
+
+	def simulate(self, policy, file_prefix):
+
+		print self.problem['locs']
+		agents = [a[0] for a in self.problem['agents']]
+		agent_classes = {a[0]:a[1] for a in self.problem['agents']}
+		agent_states = {a[0]:None for a in self.problem['agents']}
+		print agent_classes
+
+		dict_pol = {tuple([p['state'][a][1] for a in agents]):p['action'] for p in policy}
+
+		print ''
+		print 'Goal State Set:'
+		print self.problem['goal']
+
+
+		print ''
+		print 'Initial State:'
+		for a in agents:
+			agent_states[a] = random.choice(self.problem['locs'])
+			print '%s: %s' % (a,agent_states[a])
+
+		print ''
+		print 'Steps'
+		for i in range(10):
+
+			# State tuple
+			state = tuple([agent_states[a] for a in agents])
+
+			# Types of agent on each state
+			types_on_state = {s:[] for s in state}
+			for a in agents:
+				types_on_state[agent_states[a]].append(agent_classes[a])
+
+			# Action at this state 
+			pol = dict_pol[state]
+			agent_states = {a:pol[a][-1] for a in agents}
+
+			# Computing rewards
+			rwd = 0
+			for g in self.problem['goal']:
+				if g in types_on_state:
+					goal_set = set(self.problem['goal'][g])
+					current_set = set(types_on_state[g])
+					if not goal_set - current_set:
+						rwd += 1
+
+			stx =  self.s.index(tuple([self.data['locs'][s] for s in state]))
+			print i, stx, state, types_on_state, rwd
