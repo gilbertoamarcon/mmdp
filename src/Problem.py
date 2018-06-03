@@ -126,50 +126,65 @@ class Problem:
 		return policy
 
 	def plot(self, policy, file_prefix):
-
 		print 'Generating and storing plots...'
+
+
+		# For each state
 		for i,p in enumerate(tqdm(policy)):
 
+			# 
 			agts = [p['state'][e][1] for e in p['state']]
+			print agts
 
-			node_color='w'
-			node_size=10000
-			font_size=16
+			regular_node_color	= 'w'
+			goal_node_color		= 'g'
+			node_size			= 10000
+			font_size			= 10
+			figsize				= (14,10)
+
+			# Figure
+			plt.figure(figsize=figsize) 
 
 			# Building the graph
-			plt.figure(figsize=(14,10)) 
 			G = nx.Graph()
+
+			# Locations
 			for node in self.problem['locs']:
 				G.add_node(node)
+
+			# Roads
 			for edge in self.problem['roads']:
 				G.add_edge(edge[0], edge[1])
 
 			# Draw the graph structure
 			pos = nx.spring_layout(G,random_state=0)
-			nx.draw(G, pos, node_color=node_color, node_size=node_size)
+			nx.draw(G, pos, node_color=regular_node_color, node_size=node_size)
 
 			nx.draw_networkx_nodes(
 									G,
 									pos,
 									nodelist=self.problem['goal'].keys(),
-									node_color='r',
+									node_color=goal_node_color,
 									node_size=node_size,
 									alpha=0.5
 								)
-			# Regular node labels
-			labels = {l:'$%s$'%l for l in self.problem['locs'] if l not in agts}
-			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
 
-			# Agent labels
-			agx = {e:[] for e in agts}
-			for agent in self.agents.keys():
-				aux = '%s>%s'%(agent,p['action'][agent][2]) if len(p['action'][agent]) == 3 else agent
-				agx[p['action'][agent][1]].append(aux)
+			# # Regular node labels
+			# labels = {l:'$%s$'%l for l in self.problem['locs'] if l not in agts}
+			# nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
 
-			agents = {k:'\n'.join([k]+v) for k,v in agx.items()}
-			agents = {k:re.sub(r'([A-Za-z_>]+)(\d+)', r'$\1{\2}$', v) for k,v in agents.items()}
-			nx.draw_networkx_labels(G, pos, agents, font_size=font_size)
+			# # Agent labels
+			# agx = {e:[] for e in agts}
+			# for agent in self.agents.keys():
+			# 	aux = '%s>%s'%(agent,p['action'][agent][2]) if len(p['action'][agent]) == 3 else agent
+			# 	agx[p['action'][agent][1]].append(aux)
 
+			# agents = {k:'\n'.join([k]+v) for k,v in agx.items()}
+			# agents = {k:re.sub(r'([A-Za-z_>]+)(\d+)', r'$\1{\2}$', v) for k,v in agents.items()}
+			# nx.draw_networkx_labels(G, pos, agents, font_size=font_size)
+
+
+			# Saving and clearing
 			plt.savefig(file_prefix%i)
 			plt.clf()
 			plt.close()
