@@ -131,8 +131,7 @@ class Problem:
 		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
 
 		# For each action
-		# for ai,a in enumerate(tqdm(self.a)):
-		for ai,a in enumerate(self.a):
+		for ai,a in enumerate(tqdm(self.a)):
 
 			# For each state
 			for si,s in enumerate(self.s):
@@ -201,8 +200,7 @@ class Problem:
 
 		# For each state
 		print 'Generating and storing plots...'
-		# for i,pol in enumerate(tqdm(policy)):
-		for i,pol in enumerate(policy):
+		for i,pol in enumerate(tqdm(policy)):
 
 			# Figure
 			plt.figure(figsize=figsize) 
