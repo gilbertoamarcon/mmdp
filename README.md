@@ -20,13 +20,17 @@ python src/parse-policy.py -i problems/rescue.yaml -s temp/policy.h5 -o sols/res
 
 Plot the results of the policy file ```sols/rescue.yaml```:
 ```
-python src/plot.py -i problems/rescue.yaml -s sols/rescue.yaml -o plots/graph_%09d.svg
+python src/plot.py -i problems/rescue.yaml -s sols/rescue.yaml -o sim/fig/state_%09d.svg
 ```
 
-Simulate the policy file ```sols/rescue.yaml```:
+Simulate the policy file ```sols/rescue.yaml``` and generate graphic HTML report inside directory ```sim/```:
 ```
-python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml -o sim/graph_%09d.svg
+python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml -f fig/state_%09d.svg -r sim/run.html
 ```
+
+Example HTML report:
+![report](sim/run.html "Report")
+
 
 ## Script Usage
 

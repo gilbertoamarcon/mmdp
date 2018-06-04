@@ -22,10 +22,16 @@ def main():
 			help='Input solution file (YAML filename).'
 		)
 	parser.add_argument(
-			'-o','--output',
+			'-f','--figure_template',
 			nargs='?',
 			required=True,
-			help='Output image file (directory and file prefix).'
+			help='Figure image file template.'
+		)
+	parser.add_argument(
+			'-r','--run',
+			nargs='?',
+			required=True,
+			help='Output html report file (relative directory and file name).'
 		)
 	args = parser.parse_args()
 
@@ -33,7 +39,7 @@ def main():
 		policy = yaml.load(f.read())
 
 	problem = Problem(args.input_problem)
-	problem.simulate(policy,args.output)
+	problem.simulate(policy,args.figure_template,args.run)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
 from tqdm import tqdm
+from yattag import Doc
+from yattag import indent
 from collections import OrderedDict
 import numpy as np
 import itertools as it
 import yaml
+import copy
 import networkx as nx
 import numbers
 import matplotlib.pyplot as plt
@@ -189,15 +192,15 @@ class Problem:
 
 		return policy
 
-	def plot(self, policy, file_prefix):
+	def plot(self, policy, figure_template):
 
 		# Parameters
 		regular_node_color	= 'w'
 		goal_node_color		= 'g'
 		goal_node_alpha		= 0.5
-		node_size			= 25000
-		font_size			= 18
-		figsize				= (14,10)
+		node_size			= 12000
+		font_size			= 12
+		figsize				= (10,8)
 
 		# For each state
 		print 'Generating and storing plots...'
@@ -246,12 +249,11 @@ class Problem:
 			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
 
 			# Saving and clearing
-			plt.savefig(file_prefix%i)
+			plt.savefig(figure_template%i)
 			plt.clf()
 			plt.close()
 
-	def simulate(self, policy, file_prefix):
-
+	def simulate(self, policy, figure_template, run):
 
 		# Policy dictionary
 		policy = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
@@ -266,15 +268,24 @@ class Problem:
 		agent_locs = OrderedDict([(agent,None) for agent in self.agents])
 		for agent in self.agents:
 			agent_locs[agent] = np.random.choice(self.locs)
+		print agent_locs.values()
+		rwd = 0
 
 		print ''
 		print 'Steps'
+		history = {}
 		for i in range(10):
 
 			# Types of agent on each location
-			agent_classes_on_loc = {loc:[] for loc in self.locs}
+			agent_classes_on_loc = OrderedDict([(loc,[]) for loc in self.locs])
 			for agent in self.agents:
 				agent_classes_on_loc[agent_locs[agent]].append(self.agents_types[agent])
+
+			# State idx
+			state_idx =  self.s.index(tuple([self.locs[s] for s in agent_locs.values()]))
+
+			# Printing history
+			history[i] = {'state_idx':state_idx, 'agent_locs':copy.deepcopy(agent_locs), 'rwd':rwd}
 
 			# Updating agent location, given policy
 			for agent in self.agents:
@@ -302,8 +313,31 @@ class Problem:
 				if not (set(types) - set(agent_classes_on_loc[loc])):
 					rwd += 1
 
-			# State idx
-			stx =  self.s.index(tuple([self.locs[s] for s in agent_locs.values()]))
+		for h,hist in history.items():
+			print h,hist
 
-			# Printing history
-			print i, stx, agent_locs.values(), agent_classes_on_loc, rwd
+		doc, tag, text, line = Doc().ttl()
+		with tag('html'):
+			with tag('body'):
+				with tag('p', id = 'main'):
+					with tag('h1'):
+						text('Simulation Results')
+					for h,hist in history.items():
+						with tag('p', id = '%d'%h):
+							line('h2', 'Iteration %d'%h)
+							doc.stag('br')
+							text('State ID: %d'%hist['state_idx'])
+							doc.stag('br')
+							text('Reward: %d'%hist['rwd'])
+							doc.stag('br')
+							for agent,loc in hist['agent_locs'].items():
+								text('Agent %s at location %s.'%(agent,loc))
+								doc.stag('br')
+							with tag('div', id='svg'):
+								doc.stag('img', src=figure_template%hist['state_idx'])
+
+		# Storing HTML file
+		result = indent(doc.getvalue())
+		with open(run,'w') as f:
+			f.write(result)
+
