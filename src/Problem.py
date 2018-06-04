@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from tqdm import tqdm
+from collections import OrderedDict
 import numpy as np
 import itertools as it
 import yaml
@@ -251,9 +252,9 @@ class Problem:
 
 	def simulate(self, policy, file_prefix):
 
-		agent_locs = {agent:None for agent in self.agents}
 
-		pol = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
+		# Policy dictionary
+		policy = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
 
 		print ''
 		print 'Goal State Set:'
@@ -262,19 +263,16 @@ class Problem:
 
 		print ''
 		print 'Initial State:'
+		agent_locs = OrderedDict([(agent,None) for agent in self.agents])
 		for agent in self.agents:
 			agent_locs[agent] = np.random.choice(self.locs)
-			print '%s: %s' % (agent,agent_locs[agent])
 
 		print ''
 		print 'Steps'
 		for i in range(10):
 
-			# State tuple
-			state = tuple([agent_locs[agent] for agent in self.agents])
-
 			# Types of agent on each location
-			agent_classes_on_loc = {loc:[] for loc in state}
+			agent_classes_on_loc = {loc:[] for loc in self.locs}
 			for agent in self.agents:
 				agent_classes_on_loc[agent_locs[agent]].append(self.agents_types[agent])
 
@@ -290,7 +288,7 @@ class Problem:
 					pdf[self.locs[adj_loc]] = self.error/(len(adj_locs)-1)
 
 				# Agent intended next state
-				sn = self.locs[pol[state][agent][-1]]
+				sn = self.locs[policy[tuple(agent_locs.values())][agent][-1]]
 
 				# Success probability
 				pdf[sn] = 1.0-self.error
@@ -301,12 +299,11 @@ class Problem:
 			# Computing rewards
 			rwd = 0
 			for loc,types in self.name_goal.items():
-				if loc in agent_classes_on_loc:
-					if not (set(types) - set(agent_classes_on_loc[loc])):
-						rwd += 1
+				if not (set(types) - set(agent_classes_on_loc[loc])):
+					rwd += 1
 
 			# State idx
-			stx =  self.s.index(tuple([self.locs[s] for s in state]))
+			stx =  self.s.index(tuple([self.locs[s] for s in agent_locs.values()]))
 
 			# Printing history
-			print i, stx, agent_locs, state, agent_classes_on_loc, rwd
+			print i, stx, agent_locs.values(), agent_classes_on_loc, rwd
