@@ -1,6 +1,7 @@
 temp/*
 plots/*
+*.html
 *.pyc
-# *.svg
+*.svg
 *.eps
 *~
