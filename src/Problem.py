@@ -284,6 +284,12 @@ class Problem:
 			# State idx
 			state_idx =  self.s.index(tuple([self.locs[s] for s in agent_locs.values()]))
 
+			# Computing rewards
+			rwd = 0
+			for loc,types in self.name_goal.items():
+				if not (set(types) - set(agent_classes_on_loc[loc])):
+					rwd += 1
+
 			# Printing history
 			history[i] = {'state_idx':state_idx, 'agent_locs':copy.deepcopy(agent_locs), 'rwd':rwd}
 
@@ -306,12 +312,6 @@ class Problem:
 
 				# Transition
 				agent_locs[agent] = np.random.choice(self.locs,p=pdf)
-
-			# Computing rewards
-			rwd = 0
-			for loc,types in self.name_goal.items():
-				if not (set(types) - set(agent_classes_on_loc[loc])):
-					rwd += 1
 
 		# Printing history
 		for h,hist in history.items():
