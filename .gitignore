@@ -1,6 +1,6 @@
 temp/*
 plots/*
 *.pyc
-*.svg
+# *.svg
 *.eps
 *~
