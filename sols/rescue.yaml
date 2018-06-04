@@ -1,5 +1,5 @@
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -9,7 +9,7 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [move, wpt_0, wpt_1]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_0]
@@ -17,13 +17,13 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [move, wpt_0, wpt_1]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -31,7 +31,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -41,7 +41,7 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [move, wpt_1, wpt_2]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_1]
@@ -49,13 +49,13 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [move, wpt_1, wpt_2]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -63,7 +63,7 @@
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [stay, wpt_2]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -73,7 +73,7 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [stay, wpt_2]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_2]
@@ -87,7 +87,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [stay, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -95,7 +95,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -105,7 +105,7 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [move, wpt_3, wpt_1]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_3]
@@ -113,13 +113,13 @@
 - action:
     ag_0: [move, wpt_0, wpt_3]
     ag_1: [move, wpt_3, wpt_1]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_0]
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_0, wpt_3]
+    ag_0: [move, wpt_0, wpt_1]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -127,7 +127,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -135,7 +135,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -145,13 +145,13 @@
 - action:
     ag_0: [move, wpt_1, wpt_3]
     ag_1: [move, wpt_0, wpt_1]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_1]
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -159,7 +159,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -167,7 +167,7 @@
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -177,13 +177,13 @@
 - action:
     ag_0: [move, wpt_1, wpt_3]
     ag_1: [move, wpt_1, wpt_2]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_1]
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -191,7 +191,7 @@
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [stay, wpt_2]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -199,7 +199,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [stay, wpt_2]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -215,7 +215,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [stay, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -223,7 +223,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -231,7 +231,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -241,13 +241,13 @@
 - action:
     ag_0: [move, wpt_1, wpt_3]
     ag_1: [move, wpt_3, wpt_1]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_1]
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_1, wpt_3]
+    ag_0: [move, wpt_1, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -255,7 +255,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -263,7 +263,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -271,7 +271,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_1]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_2, wpt_1]
   state:
@@ -279,7 +279,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -287,7 +287,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -295,7 +295,7 @@
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -303,7 +303,7 @@
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_1]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [move, wpt_2, wpt_1]
   state:
@@ -311,7 +311,7 @@
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -351,7 +351,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_3]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_0, wpt_3]
   state:
@@ -359,7 +359,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_0]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_1, wpt_3]
   state:
@@ -367,7 +367,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_1]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_2, wpt_1]
   state:
@@ -375,7 +375,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [move, wpt_2, wpt_1]
+    ag_0: [stay, wpt_2]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -385,7 +385,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_0, wpt_1]
-    ag_2: [move, wpt_0, wpt_3]
+    ag_2: [move, wpt_0, wpt_1]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_0]
@@ -393,7 +393,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_0, wpt_1]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_0]
@@ -401,13 +401,13 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_0, wpt_1]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [stay, wpt_3]
+    ag_0: [move, wpt_3, wpt_1]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [stay, wpt_3]
   state:
@@ -417,7 +417,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_1, wpt_2]
-    ag_2: [move, wpt_0, wpt_3]
+    ag_2: [move, wpt_0, wpt_1]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_1]
@@ -425,7 +425,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_1, wpt_2]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_1]
@@ -433,13 +433,13 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_1, wpt_2]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_1]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [stay, wpt_3]
+    ag_0: [move, wpt_3, wpt_1]
     ag_1: [move, wpt_1, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -449,7 +449,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [stay, wpt_2]
-    ag_2: [move, wpt_0, wpt_3]
+    ag_2: [move, wpt_0, wpt_1]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_2]
@@ -457,7 +457,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [stay, wpt_2]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_2]
@@ -471,7 +471,7 @@
     ag_1: [at, wpt_2]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [stay, wpt_3]
+    ag_0: [move, wpt_3, wpt_1]
     ag_1: [stay, wpt_2]
     ag_2: [stay, wpt_3]
   state:
@@ -481,7 +481,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_3, wpt_1]
-    ag_2: [move, wpt_0, wpt_3]
+    ag_2: [move, wpt_0, wpt_1]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_3]
@@ -489,7 +489,7 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_3, wpt_1]
-    ag_2: [move, wpt_1, wpt_3]
+    ag_2: [move, wpt_1, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_3]
@@ -497,13 +497,13 @@
 - action:
     ag_0: [stay, wpt_3]
     ag_1: [move, wpt_3, wpt_1]
-    ag_2: [move, wpt_2, wpt_1]
+    ag_2: [stay, wpt_2]
   state:
     ag_0: [at, wpt_3]
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_2]
 - action:
-    ag_0: [stay, wpt_3]
+    ag_0: [move, wpt_3, wpt_1]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [stay, wpt_3]
   state:

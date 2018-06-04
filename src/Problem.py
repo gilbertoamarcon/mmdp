@@ -60,7 +60,7 @@ class Problem:
 		self.name_goal			= self.problem['goal']
 
 		# Idx Relationships
-		self.idx_roads			= [[self.locs[l] for l in r] for r in self.problem['roads']]
+		self.idx_roads			= [[self.locs[loc] for loc in r] for r in self.problem['roads']]
 		self.idx_agents_types	= {self.agents[a[0]]:self.types[a[1]] for a in self.problem['agents']}
 		self.idx_goals			= {self.locs[loc]:[self.types[t] for t in type] for loc,type in self.problem['goal'].items()}
 
@@ -84,33 +84,75 @@ class Problem:
 	def flatten(self):
 		
 		print 'Flattening R...'
-		self.R = np.zeros((self.m,self.n),dtype=np.float32)
-		for si,s in enumerate(self.s):
-			for ai,a in enumerate(self.a):
-				agent_classes_on_loc = {l:[] for l in s}
-				for agent_idx,l in enumerate(s):
-					if a[agent_idx] == l:
-						agent_classes_on_loc[l].append(self.idx_agents_types[agent_idx])
-				self.R[ai][si] = sum([gi in agent_classes_on_loc and not sum([x not in agent_classes_on_loc[gi] for x in g]) for gi,g in self.idx_goals.items()])
 
-		print 'Flattening T...'
-		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
-		for ai,a in enumerate(tqdm(self.a)):
-			for si,s in enumerate(self.s):
-				sn_prob = []
+		# Initializing reward table
+		self.R = np.zeros((self.m,self.n),dtype=np.float32)
+
+		# For each state
+		for si,s in enumerate(self.s):
+
+			# For each action
+			for ai,a in enumerate(self.a):
+
+				# Agents classes staying at each location
+				agent_classes_on_loc = {loc_idx:[] for loc_idx in s}
 
 				# For each agent
+				for agent_idx,loc_idx in enumerate(s):
+
+					# If agent action is to stay
+					if a[agent_idx] == loc_idx:
+
+						# Register agent's class at location
+						agent_classes_on_loc[loc_idx].append(self.idx_agents_types[agent_idx])
+				
+				# Computing reward
+				self.R[ai][si] = 0
+
+				# For each goal requirement, location id and list of type ids
+				for loc_idx,types_idx in self.idx_goals.items():
+
+					# If there are the location has agents on it 
+					if loc_idx in agent_classes_on_loc:
+
+						# All the required types at location have been filled by agents at the location
+						if not (set(types_idx)-set(agent_classes_on_loc[loc_idx])):
+							self.R[ai][si] += 1
+
+
+		print 'Flattening T...'
+
+		# Initializing transition table
+		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
+
+		# For each action
+		for ai,a in enumerate(tqdm(self.a)):
+
+			# For each state
+			for si,s in enumerate(self.s):
+
+				# For each agent
+				sn_prob = []
 				for agent_idx,agent in enumerate(self.agents):
+
+					# Baseline probability of going to any state (error)
 					agent_next_loc_prob = self.error*np.ones(len(self.locs),dtype=np.float32)/(len(self.locs)-1)
-					agent_next_loc_prob[self.agent_transition[a[agent_idx]][s[agent_idx]]] = 1.0-self.error
+
+					# Agent intended next state
+					sn = self.agent_transition[a[agent_idx]][s[agent_idx]]
+
+					# Success probability
+					agent_next_loc_prob[sn] = 1.0-self.error
+
+					# Next state probabilities
 					sn_prob.append(agent_next_loc_prob)
 
 				# For each next state
 				for sni,sn in enumerate(self.s):
-					self.T[ai][si][sni] = sum([sn_prob[agent_idx][sn[agent_idx]] for agent_idx,agent in enumerate(self.agents)])
 
-				# Normalizing
-				self.T[ai][si] /= sum(self.T[ai][si])
+					# Probability of going to next state sn
+					self.T[ai][si][sni] = np.prod([sn_prob[agent_idx][sn[agent_idx]] for agent_idx,agent in enumerate(self.agents)])
+
 
 	def parse_policy(self, raw_policy):
 		policy = []
@@ -148,10 +190,8 @@ class Problem:
 
 		# For each state
 		print 'Generating and storing plots...'
-		for i,p in enumerate(tqdm(policy)):
-
-			# Agent locations
-			agent_locs = [p['state'][e][1] for e in p['state']]
+		# for i,pol in enumerate(tqdm(policy)):
+		for i,pol in enumerate(policy):
 
 			# Figure
 			plt.figure(figsize=figsize) 
@@ -183,15 +223,14 @@ class Problem:
 
 			# Node labels
 			labels = {}
-			for l,loc in enumerate(self.locs):
+			for loc in self.locs:
 
 				# Location name and goal requirements
-				labels[loc] = '$%s%s$'%(loc,'(%s)'%','.join(self.types[self.idx_agents_types[k]] for k in self.idx_goals[l]) if l in self.idx_goals else '')
+				labels[loc] = '$%s%s$'%(loc,'(%s)'%','.join(self.name_goal[loc]) if loc in self.name_goal else '')
 
 				# For each agent at loc
-				agent_at_locs = [agent_idx for agent_idx,agent_loc in enumerate(agent_locs) if agent_loc == loc]
-				for a,c in [(self.agents[agent_idx],self.types[self.idx_agents_types[agent_idx]]) for agent_idx in agent_at_locs]:
-					labels[loc] += '\n$%s(%s)>%s$'%(a,c,p['action'][a][-1]) if len(p['action'][a]) == 3 else '\n$%s(%s)$'%(a,c)
+				for agent,type in [(agent,self.agents_types[agent]) for agent in pol['state'] if pol['state'][agent][-1] == loc]:
+					labels[loc] += '\n$%s(%s)%s$'%(agent,type,'>'+pol['action'][agent][-1] if pol['action'][agent][0] == 'move' else '')
 
 			# Adding Labels
 			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
@@ -203,9 +242,9 @@ class Problem:
 
 	def simulate(self, policy, file_prefix):
 
-		agent_states = {agent:None for agent in self.agents}
+		agent_locs = {agent:None for agent in self.agents}
 
-		dict_pol = {tuple([p['state'][agent][1] for agent in self.agents]):p['action'] for p in policy}
+		pol = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
 
 		print ''
 		print 'Goal State Set:'
@@ -215,33 +254,32 @@ class Problem:
 		print ''
 		print 'Initial State:'
 		for agent in self.agents:
-			agent_states[agent] = random.choice(self.locs)
-			print '%s: %s' % (agent,agent_states[agent])
+			agent_locs[agent] = random.choice(self.locs)
+			print '%s: %s' % (agent,agent_locs[agent])
 
 		print ''
 		print 'Steps'
 		for i in range(10):
 
 			# State tuple
-			state = tuple([agent_states[agent] for agent in self.agents])
+			state = tuple([agent_locs[agent] for agent in self.agents])
 
-			# Types of agent on each state
-			types_on_state = {s:[] for s in state}
+			# Types of agent on each location
+			agent_classes_on_loc = {loc:[] for loc in state}
 			for agent in self.agents:
-				types_on_state[agent_states[agent]].append(self.agents_types[agent])
+				agent_classes_on_loc[agent_locs[agent]].append(self.agents_types[agent])
 
-			# Action at this state 
-			pol = dict_pol[state]
-			agent_states = {agent:pol[agent][-1] for agent in self.agents}
+			# Updating agent location, given policy
+			agent_locs = {agent:pol[state][agent][-1] for agent in self.agents}
 
 			# Computing rewards
 			rwd = 0
 			for g in self.name_goal:
-				if g in types_on_state:
+				if g in agent_classes_on_loc:
 					goal_set = set(self.name_goal[g])
-					current_set = set(types_on_state[g])
+					current_set = set(agent_classes_on_loc[g])
 					if not goal_set - current_set:
 						rwd += 1
 
 			stx =  self.s.index(tuple([self.locs[s] for s in state]))
-			print i, stx, state, types_on_state, rwd
+			print i, stx, agent_locs, state, agent_classes_on_loc, rwd
