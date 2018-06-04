@@ -28,10 +28,17 @@ def main():
 			help='Figure image file template.'
 		)
 	parser.add_argument(
-			'-r','--run',
+			'-o','--output',
 			nargs='?',
 			required=True,
 			help='Output html report file (relative directory and file name).'
+		)
+	parser.add_argument(
+			'-x','--iterations',
+			nargs='?',
+			type=int,
+			required=True,
+			help='The number of simulation steps.'
 		)
 	args = parser.parse_args()
 
@@ -39,7 +46,7 @@ def main():
 		policy = yaml.load(f.read())
 
 	problem = Problem(args.input_problem)
-	problem.simulate(policy,args.figure_template,args.run)
+	problem.simulate(policy,args.iterations,args.figure_template,args.output)
 
 
 if __name__ == "__main__":

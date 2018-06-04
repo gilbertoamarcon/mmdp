@@ -253,7 +253,7 @@ class Problem:
 			plt.clf()
 			plt.close()
 
-	def simulate(self, policy, figure_template, run):
+	def simulate(self, policy, iterations, figure_template, output):
 
 		# Policy dictionary
 		policy = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
@@ -274,7 +274,7 @@ class Problem:
 		print ''
 		print 'Steps'
 		history = {}
-		for i in range(10):
+		for i in range(iterations):
 
 			# Types of agent on each location
 			agent_classes_on_loc = OrderedDict([(loc,[]) for loc in self.locs])
@@ -340,6 +340,6 @@ class Problem:
 
 		# Storing HTML file
 		result = indent(doc.getvalue())
-		with open(run,'w') as f:
+		with open(output,'w') as f:
 			f.write(result)
 

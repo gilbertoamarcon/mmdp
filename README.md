@@ -23,9 +23,9 @@ Plot the results of the policy file ```sols/rescue.yaml```:
 python src/plot.py -i problems/rescue.yaml -s sols/rescue.yaml -o sim/fig/state_%09d.svg
 ```
 
-Simulate the policy file ```sols/rescue.yaml``` and generate graphic HTML report inside directory ```sim/```:
+Simulate the policy file ```sols/rescue.yaml``` over ```10``` steps and generate graphic HTML report inside directory ```sim/```:
 ```
-python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml -f fig/state_%09d.svg -r sim/run.html
+python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml -x 10 -f fig/state_%09d.svg -o sim/run.html
 ```
 
 ## Script Usage
