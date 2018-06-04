@@ -30,26 +30,44 @@ def main():
 	args = parser.parse_args()
 
 
-	sols = {s:None for s in args.input_sols}
 
+	# Loading problem
 	problem = Problem(args.input_problem)
 
+	# Loading solutions
+	sols = {s:None for s in args.input_sols}
 	for sol_filename in sols:
 		with open(sol_filename,'r') as f:
 			sols[sol_filename] = yaml.load(f.read())
 
+
+	# For each state
 	pol = []
 	for s in problem.s:
+
 		action = {}
 		state = {}
+
+		# For each agent 
 		for agent_idx,loc_idx in enumerate(s):
-			agent	= problem.decode('agents',agent_idx)
-			loc 	= problem.decode('locs',loc_idx)
+
+			# Agent and agent location
+			agent	= problem.agents[agent_idx]
+			loc		= problem.locs[loc_idx]
+
+			# Agent state
 			state[agent] = ['at',loc]
-			aux = {agent:p['action'][agent] for sol in sols.values() for p in sol if agent in p['action'] and agent in p['state'] and loc in p['state'][agent]}
-			action[agent] = aux[agent]
+
+			# Agent Action
+			for sol in sols.values():
+				for p in sol:
+					if agent in p['action'] and agent in p['state'] and loc in p['state'][agent]:
+						action[agent] = p['action'][agent]
+
+		# Appending policy entry: new state and corresponding action
 		pol.append({'action':deepcopy(action),'state':deepcopy(state)})
 
+	# Storing merged policy
 	with open(args.output, 'w') as f:
 		yaml.dump(pol, f)
 
