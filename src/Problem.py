@@ -281,11 +281,15 @@ class Problem:
 				agent_classes_on_loc[agent_locs[agent]].append(self.agents_types[agent])
 
 			# Updating agent location, given policy
-			agent_locs = {}
 			for agent in self.agents:
 
-				# Baseline probability of going to any state (error)
-				pdf = self.error*np.ones(len(self.locs),dtype=np.float32)/(len(self.locs)-1)
+				# Locations adjacent to the agent location
+				adj_locs = self.name_loc_roads[agent_locs[agent]]
+
+				# Baseline probability of going to any adjacent location (error)
+				pdf = np.zeros(len(self.locs),dtype=np.float32)
+				for adj_loc in adj_locs:
+					pdf[self.locs[adj_loc]] = self.error/(len(adj_locs)-1)
 
 				# Agent intended next state
 				sn = self.locs[pol[state][agent][-1]]
