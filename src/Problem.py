@@ -313,9 +313,11 @@ class Problem:
 				if not (set(types) - set(agent_classes_on_loc[loc])):
 					rwd += 1
 
+		# Printing history
 		for h,hist in history.items():
 			print h,hist
 
+		# Generating HTML report
 		doc, tag, text, line = Doc().ttl()
 		with tag('html'):
 			with tag('body'):
