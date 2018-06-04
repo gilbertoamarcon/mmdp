@@ -28,8 +28,7 @@ Simulate the policy file ```sols/rescue.yaml``` and generate graphic HTML report
 python src/simulate.py -i problems/rescue.yaml -s sols/rescue.yaml -f fig/state_%09d.svg -r sim/run.html
 ```
 
-Example HTML report: 
-![report]:sim/run.html "Report"
+Example HTML report: [report](sim/run.html "Report")
 
 ## Script Usage
 
