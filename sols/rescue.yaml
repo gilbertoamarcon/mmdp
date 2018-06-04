@@ -271,7 +271,7 @@
     ag_1: [at, wpt_0]
     ag_2: [at, wpt_1]
 - action:
-    ag_0: [stay, wpt_2]
+    ag_0: [move, wpt_2, wpt_1]
     ag_1: [move, wpt_0, wpt_1]
     ag_2: [move, wpt_2, wpt_1]
   state:
@@ -367,7 +367,7 @@
     ag_1: [at, wpt_3]
     ag_2: [at, wpt_1]
 - action:
-    ag_0: [stay, wpt_2]
+    ag_0: [move, wpt_2, wpt_1]
     ag_1: [move, wpt_3, wpt_1]
     ag_2: [move, wpt_2, wpt_1]
   state:

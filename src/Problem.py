@@ -4,7 +4,6 @@ from tqdm import tqdm
 import numpy as np
 import itertools as it
 import yaml
-import random
 import networkx as nx
 import numbers
 import matplotlib.pyplot as plt
@@ -58,16 +57,22 @@ class Problem:
 		self.name_roads			= self.problem['roads']
 		self.agents_types		= {a[0]:a[1] for a in self.problem['agents']}
 		self.name_goal			= self.problem['goal']
+		self.name_loc_roads		= {loc:[] for loc in self.locs}
+		for road in self.name_roads:
+			self.name_loc_roads[road[0]].append(road[1])
 
 		# Idx Relationships
-		self.idx_roads			= [[self.locs[loc] for loc in r] for r in self.problem['roads']]
+		self.idx_roads			= [[self.locs[road[0]],self.locs[road[1]]] for road in self.problem['roads']]
 		self.idx_agents_types	= {self.agents[a[0]]:self.types[a[1]] for a in self.problem['agents']}
 		self.idx_goals			= {self.locs[loc]:[self.types[t] for t in type] for loc,type in self.problem['goal'].items()}
+		self.idx_loc_roads		= {loc_idx:[] for loc_idx,loc in enumerate(self.locs)}
+		for road_idx in self.idx_roads:
+			self.idx_loc_roads[road_idx[0]].append(road_idx[1])
 
 		# Connectivity boolean matrix
 		conn = np.zeros((len(self.locs),len(self.locs))).astype(np.bool_)
-		for r in self.name_roads:
-			conn[self.locs[r[0]]][self.locs[r[1]]] = 1
+		for road in self.name_roads:
+			conn[self.locs[road[0]]][self.locs[road[1]]] = 1
 
 		# Transition matrix
 		x = np.linspace(0, len(self.locs)-1, len(self.locs)).astype(np.int32)
@@ -126,7 +131,8 @@ class Problem:
 		self.T = np.zeros((self.m,self.n,self.n),dtype=np.float32)
 
 		# For each action
-		for ai,a in enumerate(tqdm(self.a)):
+		# for ai,a in enumerate(tqdm(self.a)):
+		for ai,a in enumerate(self.a):
 
 			# For each state
 			for si,s in enumerate(self.s):
@@ -135,8 +141,13 @@ class Problem:
 				sn_prob = []
 				for agent_idx,agent in enumerate(self.agents):
 
-					# Baseline probability of going to any state (error)
-					agent_next_loc_prob = self.error*np.ones(len(self.locs),dtype=np.float32)/(len(self.locs)-1)
+					# Locations adjacent to the agent location
+					adj_loc_idxs = self.idx_loc_roads[s[agent_idx]]
+
+					# Baseline probability of going to any adjacent location (error)
+					agent_next_loc_prob = np.zeros(len(self.locs),dtype=np.float32)
+					for adj_loc_idx in adj_loc_idxs:
+						agent_next_loc_prob[adj_loc_idx] = self.error/(len(adj_loc_idxs)-1)
 
 					# Agent intended next state
 					sn = self.agent_transition[a[agent_idx]][s[agent_idx]]
@@ -254,7 +265,7 @@ class Problem:
 		print ''
 		print 'Initial State:'
 		for agent in self.agents:
-			agent_locs[agent] = random.choice(self.locs)
+			agent_locs[agent] = np.random.choice(self.locs)
 			print '%s: %s' % (agent,agent_locs[agent])
 
 		print ''
@@ -270,16 +281,30 @@ class Problem:
 				agent_classes_on_loc[agent_locs[agent]].append(self.agents_types[agent])
 
 			# Updating agent location, given policy
-			agent_locs = {agent:pol[state][agent][-1] for agent in self.agents}
+			agent_locs = {}
+			for agent in self.agents:
+
+				# Baseline probability of going to any state (error)
+				pdf = self.error*np.ones(len(self.locs),dtype=np.float32)/(len(self.locs)-1)
+
+				# Agent intended next state
+				sn = self.locs[pol[state][agent][-1]]
+
+				# Success probability
+				pdf[sn] = 1.0-self.error
+
+				# Transition
+				agent_locs[agent] = np.random.choice(self.locs,p=pdf)
 
 			# Computing rewards
 			rwd = 0
-			for g in self.name_goal:
-				if g in agent_classes_on_loc:
-					goal_set = set(self.name_goal[g])
-					current_set = set(agent_classes_on_loc[g])
-					if not goal_set - current_set:
+			for loc,types in self.name_goal.items():
+				if loc in agent_classes_on_loc:
+					if not (set(types) - set(agent_classes_on_loc[loc])):
 						rwd += 1
 
+			# State idx
 			stx =  self.s.index(tuple([self.locs[s] for s in state]))
+
+			# Printing history
 			print i, stx, agent_locs, state, agent_classes_on_loc, rwd
