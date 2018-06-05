@@ -13,5 +13,5 @@ prob=$1
 sol=$2
 
 # Simulation
-python src/simulate.py -i $prob -s $sol -o sim/run.html
+python src/simulate.py -i $prob -s $sol -o sim/run.html -x 10 -f fig/state_%09.svg
 
