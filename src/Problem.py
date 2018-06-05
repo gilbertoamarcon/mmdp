@@ -195,12 +195,13 @@ class Problem:
 	def plot(self, policy, figure_template):
 
 		# Parameters
-		regular_node_color	= 'w'
-		goal_node_color		= 'g'
-		goal_node_alpha		= 0.5
-		node_size			= 12000
-		font_size			= 12
-		figsize				= (10,8)
+		regular_node_color		= 'w'
+		met_goal_node_color		= 'g'
+		unmet_goal_node_color	= 'r'
+		goal_node_alpha			= 0.5
+		node_size				= 12000
+		font_size				= 12
+		figsize					= (10,8)
 
 		# For each state
 		print 'Generating and storing plots...'
@@ -224,12 +225,30 @@ class Problem:
 			pos = nx.spring_layout(G,random_state=0)
 			nx.draw(G, pos, node_color=regular_node_color, node_size=node_size)
 
-			# Goal node shading
+			# Met and unmet goal locations
+			met_goal_locs = []
+			unmet_goal_locs = []
+			for loc,req_types in self.name_goal.items():
+				if set(req_types) - set([self.agents_types[agent] for agent in pol['state'] if pol['state'][agent][-1] == loc]):
+					unmet_goal_locs.append(loc)
+				else:
+					met_goal_locs.append(loc)
+
+			# Met goal node shading
 			nx.draw_networkx_nodes(
 									G,
 									pos,
-									nodelist	= self.name_goal.keys(),
-									node_color	= goal_node_color,
+									nodelist	= met_goal_locs,
+									node_color	= met_goal_node_color,
+									node_size	= node_size,
+									alpha		= goal_node_alpha
+								)
+			# Unmet goal node shading
+			nx.draw_networkx_nodes(
+									G,
+									pos,
+									nodelist	= unmet_goal_locs,
+									node_color	= unmet_goal_node_color,
 									node_size	= node_size,
 									alpha		= goal_node_alpha
 								)
