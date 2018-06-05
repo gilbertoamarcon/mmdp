@@ -1,0 +1,48 @@
+error: 0.1
+roads:
+  - [wpt_0,wpt_0]
+  - [wpt_1,wpt_1]
+  - [wpt_2,wpt_2]
+  - [wpt_3,wpt_3]
+  - [wpt_4,wpt_4]
+  - [wpt_5,wpt_5]
+  - [wpt_0,wpt_1]
+  - [wpt_1,wpt_0]
+  - [wpt_0,wpt_3]
+  - [wpt_3,wpt_0]
+  - [wpt_3,wpt_1]
+  - [wpt_1,wpt_3]
+  - [wpt_1,wpt_2]
+  - [wpt_2,wpt_1]
+  - [wpt_3,wpt_5]
+  - [wpt_2,wpt_4]
+  - [wpt_4,wpt_1]
+  - [wpt_4,wpt_0]
+types:
+  - uav
+  - rover
+agents:
+  - [ag_0,uav]
+  - [ag_1,rover]
+  - [ag_2,rover]
+  - [ag_3,uav]
+  - [ag_4,uav]
+  - [ag_5,uav]
+goal:
+  wpt_2:
+    - uav
+    - rover
+  wpt_3:
+    - uav
+  wpt_4:
+    - uav
+  wpt_5:
+    - rover
+    - uav
+locs:
+  - wpt_0
+  - wpt_1
+  - wpt_2
+  - wpt_3
+  - wpt_4
+  - wpt_5
