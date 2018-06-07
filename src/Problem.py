@@ -149,14 +149,20 @@ class Problem:
 
 					# Baseline probability of going to any adjacent location (error)
 					agent_next_loc_prob = np.zeros(len(self.locs),dtype=np.float32)
-					for adj_loc_idx in adj_loc_idxs:
-						agent_next_loc_prob[adj_loc_idx] = self.error/(len(adj_loc_idxs)-1)
+                                        if len(adj_loc_idxs) == 1: # special case
+                                                pass
+                                        else:
+					        for adj_loc_idx in adj_loc_idxs:
+					        	agent_next_loc_prob[adj_loc_idx] = self.error/(len(adj_loc_idxs)-1)
 
 					# Agent intended next state
 					sn = self.agent_transition[a[agent_idx]][s[agent_idx]]
 
 					# Success probability
-					agent_next_loc_prob[sn] = 1.0-self.error
+                                        if len(adj_loc_idxs) == 1: # special case
+					        agent_next_loc_prob[sn] = 1.0
+                                        else:
+					        agent_next_loc_prob[sn] = 1.0-self.error
 
 					# Next state probabilities
 					sn_prob.append(agent_next_loc_prob)
@@ -320,14 +326,20 @@ class Problem:
 
 				# Baseline probability of going to any adjacent location (error)
 				pdf = np.zeros(len(self.locs),dtype=np.float32)
-				for adj_loc in adj_locs:
-					pdf[self.locs[adj_loc]] = self.error/(len(adj_locs)-1)
+                                if len(adj_locs) == 1:
+                                        pass
+                                else:
+				        for adj_loc in adj_locs:
+				        	pdf[self.locs[adj_loc]] = self.error/(len(adj_locs)-1)
 
 				# Agent intended next state
 				sn = self.locs[policy[tuple(agent_locs.values())][agent][-1]]
 
 				# Success probability
-				pdf[sn] = 1.0-self.error
+                                if len(adj_locs) == 1:
+				        pdf[sn] = 1.0
+                                else:
+				        pdf[sn] = 1.0-self.error
 
 				# Transition
 				agent_locs[agent] = np.random.choice(self.locs,p=pdf)
