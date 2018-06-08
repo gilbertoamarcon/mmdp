@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from pgmagick import Image, ImageList, Geometry, Color
 from tqdm import tqdm
 from yattag import Doc
 from yattag import indent
@@ -272,7 +273,7 @@ class Problem:
 			plt.clf()
 			plt.close()
 
-	def simulate(self, policy, iterations, figure_template, output):
+	def simulate(self, policy, iterations, output, figure_template, html, gif, anim_delay):
 
 		# Policy dictionary
 		policy = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
@@ -336,6 +337,13 @@ class Problem:
 		for h,hist in history.items():
 			print h,hist
 
+		# Creating animated GIF
+		imgs = ImageList()
+		for h,hist in history.items():
+			imgs.append(Image(output+figure_template%hist['state_idx']))
+		imgs.animationDelayImages(anim_delay)
+		imgs.writeImages(output+gif)
+
 		# Generating HTML report
 		doc, tag, text, line = Doc().ttl()
 		with tag('html'):
@@ -343,6 +351,9 @@ class Problem:
 				with tag('p', id = 'main'):
 					with tag('h1'):
 						text('Simulation Results')
+					line('h2', 'Animation')
+					with tag('div', id='frame'):
+						doc.stag('img', src=gif)
 					for h,hist in history.items():
 						with tag('p', id = '%d'%h):
 							line('h2', 'Iteration %d'%h)
@@ -354,11 +365,11 @@ class Problem:
 							for agent,loc in hist['agent_locs'].items():
 								text('Agent %s at location %s.'%(agent,loc))
 								doc.stag('br')
-							with tag('div', id='svg'):
+							with tag('div', id='frame'):
 								doc.stag('img', src=figure_template%hist['state_idx'])
 
 		# Storing HTML file
 		result = indent(doc.getvalue())
-		with open(output,'w') as f:
+		with open(output+html,'w') as f:
 			f.write(result)
 

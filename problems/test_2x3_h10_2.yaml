@@ -1,0 +1,57 @@
+agents:
+- - a0
+  - uav
+- - a1
+  - rover
+- - a2
+  - uav
+error: 0.1
+goal:
+  waypoint01:
+  - uav
+  - rover
+  waypoint02:
+  - uav
+locs:
+- waypoint10
+- waypoint11
+- waypoint12
+- waypoint02
+- waypoint01
+- waypoint00
+roads:
+- - waypoint10
+  - waypoint10
+- - waypoint10
+  - waypoint11
+- - waypoint10
+  - waypoint00
+- - waypoint11
+  - waypoint10
+- - waypoint11
+  - waypoint11
+- - waypoint12
+  - waypoint12
+- - waypoint12
+  - waypoint02
+- - waypoint02
+  - waypoint12
+- - waypoint02
+  - waypoint02
+- - waypoint02
+  - waypoint01
+- - waypoint01
+  - waypoint02
+- - waypoint01
+  - waypoint01
+- - waypoint01
+  - waypoint00
+- - waypoint00
+  - waypoint10
+- - waypoint00
+  - waypoint01
+- - waypoint00
+  - waypoint00
+types:
+- uav
+- rover

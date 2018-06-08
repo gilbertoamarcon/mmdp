@@ -1,0 +1,1728 @@
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint10]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint10, waypoint00]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint10]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint10]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint10]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint10]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint10]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint11]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint11]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint11]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint11]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint11]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint11]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint12]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint12]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint12]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint12]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint12]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint12]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint02]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint02]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint02]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint02]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint02]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint02]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint01]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint01, waypoint11]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint01]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint01]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint01]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint01]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint01]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint00]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint00, waypoint01]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint00]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint00]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint00]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint00]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint10, waypoint00]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint10]
+    a1: [at, waypoint00]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint10]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint10]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint10]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint10]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint10]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint10]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint11]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint11, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint11]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint11]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint11]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint11]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint11]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint12]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint11, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint12]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint12]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint12]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint12]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint12]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint02]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint11, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint02]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint02]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint02]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint02]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint02]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint01]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint01]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint01]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint01]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint01]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint01]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint00]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint00]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint00]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint00]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint00]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint11]
+    a1: [at, waypoint00]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint10]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint10]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint10]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint10]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint10]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint10]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint11]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint11]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint11]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint11]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint11]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint11]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint12]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint12]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint12]
+    a2: [at, waypoint12]
+- action:
+    a0: [stay, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint12]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint12]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint12]
+    a2: [at, waypoint00]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint02]
+    a2: [at, waypoint10]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint02]
+    a2: [at, waypoint11]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint02]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint02]
+    a2: [at, waypoint02]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint02]
+    a2: [at, waypoint01]
+- action:
+    a0: [stay, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint02]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint01]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint01]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint01]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint01]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint01]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint01]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint00]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint00]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint00]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint00]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint00]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint12, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint12]
+    a1: [at, waypoint00]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint10]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint10, waypoint00]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint10]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint10]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint10]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint10]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint10]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint11]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint11]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint11]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint11]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint11]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint11]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint12]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint12]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint12]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint12]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint12]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint12]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint02]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint02]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint02]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint02]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint02]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint02]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint01]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint01, waypoint11]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint01]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint01]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint01]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint01]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint01]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint00]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint00, waypoint01]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint00]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint00]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint00]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint00]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint02, waypoint12]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint02]
+    a1: [at, waypoint00]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint10]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint10]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint10]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint10]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint10]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint10]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint11]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint11]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint11]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint11]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint11]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint11]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint12]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint12]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint12]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint12]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint12]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint12]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint02]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint02]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint02]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint02]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint02]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint02]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint01]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint01]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint01]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint01]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint01]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint01]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint00]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint00]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint00]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint00]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint00]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint01, waypoint11]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint01]
+    a1: [at, waypoint00]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint10]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint10, waypoint00]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint10]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint10]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint10]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint10]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint10, waypoint00]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint10]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint11]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint11]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint11, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint11]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint11]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint11]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint11, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint11]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint12]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint12]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [stay, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint12]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint12]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint12]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [stay, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint12]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint02]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint02]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint02, waypoint12]
+    a2: [stay, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint02]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint02]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint02]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint02, waypoint12]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint02]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint01]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint01, waypoint11]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint01]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint01]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint01]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint01]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint01, waypoint11]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint01]
+    a2: [at, waypoint00]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint10, waypoint00]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint00]
+    a2: [at, waypoint10]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint00, waypoint01]
+    a2: [stay, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint00]
+    a2: [at, waypoint11]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint12, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint00]
+    a2: [at, waypoint12]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint02, waypoint12]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint00]
+    a2: [at, waypoint02]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint01, waypoint11]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint00]
+    a2: [at, waypoint01]
+- action:
+    a0: [move, waypoint00, waypoint01]
+    a1: [move, waypoint00, waypoint01]
+    a2: [move, waypoint00, waypoint01]
+  state:
+    a0: [at, waypoint00]
+    a1: [at, waypoint00]
+    a2: [at, waypoint00]
