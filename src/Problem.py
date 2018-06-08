@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from copy import deepcopy
 from pgmagick import Image, ImageList, Geometry, Color
 from tqdm import tqdm
 from yattag import Doc
@@ -193,7 +194,7 @@ class Problem:
 
 		return policy
 
-	def plot(self, policy, figure_template):
+	def plot(self, policy, figure_template, states=None):
 
 		# Parameters
 		regular_node_color		= 'w'
@@ -206,6 +207,8 @@ class Problem:
 
 		# For each state
 		print 'Generating and storing plots...'
+		if states is not None:
+			policy = [policy[s] for s in states]
 		for i,pol in enumerate(tqdm(policy)):
 
 			# Figure
@@ -269,11 +272,16 @@ class Problem:
 			nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
 
 			# Saving and clearing
-			plt.savefig(figure_template%i)
+			if states is None:
+				plt.savefig(figure_template%i)
+			else:
+				plt.savefig(figure_template%states[i])
 			plt.clf()
 			plt.close()
 
 	def simulate(self, policy, iterations, output, figure_template, html, gif, anim_delay):
+
+		raw_policy = deepcopy(policy)
 
 		# Policy dictionary
 		policy = {tuple([pol['state'][agent][1] for agent in self.agents]):pol['action'] for pol in policy}
@@ -332,6 +340,9 @@ class Problem:
 
 				# Transition
 				agent_locs[agent] = np.random.choice(self.locs,p=pdf)
+
+		# Printing history
+		self.plot(raw_policy, output+figure_template, states=[hist['state_idx'] for hist in history.values()])
 
 		# Printing history
 		for h,hist in history.items():

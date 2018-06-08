@@ -1,32 +1,64 @@
+agents:
+- - a0
+  - uav
+- - a1
+  - rover
+- - a2
+  - uav
+- - a3
+  - rover
+- - a4
+  - rover
 error: 0.1
-roads:
-  - [wpt_0,wpt_0]
-  - [wpt_1,wpt_1]
-  - [wpt_2,wpt_2]
-  - [wpt_3,wpt_3]
-  - [wpt_0,wpt_1]
-  - [wpt_1,wpt_0]
-  - [wpt_0,wpt_3]
-  - [wpt_3,wpt_0]
-  - [wpt_3,wpt_1]
-  - [wpt_1,wpt_3]
-  - [wpt_1,wpt_2]
-  - [wpt_2,wpt_1]
-types:
+goal:
+  w01:
+  - uav
+  w02:
+  - rover
+  - rover
+  w11:
   - uav
   - rover
-agents:
-  - [ag_0,uav]
-  - [ag_1,rover]
-  - [ag_2,uav]
-goal:
-  wpt_2:
-    - uav
-    - rover
-  wpt_3:
-    - uav
 locs:
-- wpt_0
-- wpt_1
-- wpt_2
-- wpt_3
+- w10
+- w11
+- w12
+- w02
+- w01
+- w00
+roads:
+- - w10
+  - w10
+- - w10
+  - w11
+- - w11
+  - w10
+- - w11
+  - w11
+- - w11
+  - w12
+- - w11
+  - w01
+- - w12
+  - w11
+- - w12
+  - w12
+- - w02
+  - w02
+- - w02
+  - w01
+- - w01
+  - w11
+- - w01
+  - w02
+- - w01
+  - w01
+- - w01
+  - w00
+- - w00
+  - w01
+- - w00
+  - w00
+types:
+- uav
+- rover
