@@ -371,6 +371,8 @@ class Problem:
 
 		# Storing HTML file
 		result = indent(doc.getvalue())
-		with open(output,'w') as f:
+		with open('{}/run_results.html'.format(output),'w') as f:
 			f.write(result)
+
+                return history
 

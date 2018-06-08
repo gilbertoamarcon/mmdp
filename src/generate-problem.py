@@ -42,18 +42,11 @@ def grid_2d_graph(m,n,percent_drop=0.0,create_using=nx.DiGraph()):
     G.add_edges_from( ('waypoint{}{}'.format(i,j),'waypoint{}{}'.format(i,j)) for i in rows for j in columns )
     return G
 
-def save_yaml(error, gridsize, percent_drop, filename):
+def save_yaml(error, gridsize, percent_drop, goal_num, filename):
     
     data = {}
 
     data['types'] = ['uav', 'rover']
-    data['agents'] = [
-        ['a0', 'uav'],
-        ['a1', 'rover'],
-        ['a2', 'uav']
-    ]
-
-
     data['error'] = error
 
 
@@ -68,17 +61,39 @@ def save_yaml(error, gridsize, percent_drop, filename):
     edges = [list(x) for x in edges]
     data['roads'] = edges
 
-    goals = random.sample(n, 2)
+    goals = random.sample(n, goal_num)
     
-    data['goal'] = {
-        goals[0]: [
+    data['goal'] = {}
+    data['agents'] = []
+
+    data['goal'][goals[0]] = [
+        'uav',
+        'rover'
+    ]
+    data['agents'].append(['a{}'.format(len(data['agents'])), 'uav'])
+    data['agents'].append(['a{}'.format(len(data['agents'])), 'rover'])
+
+    if len(goals) > 1:
+        data['goal'][goals[1]] = [
             'uav',
-    	'rover'
-        ],
-        goals[1]: [
+        ]
+        data['agents'].append(['a{}'.format(len(data['agents'])), 'uav'])
+
+    if len(goals) > 2:
+        data['goal'][goals[2]] = [
+            'rover',
+            'rover'
+        ]
+        data['agents'].append(['a{}'.format(len(data['agents'])), 'rover'])
+        data['agents'].append(['a{}'.format(len(data['agents'])), 'rover'])
+
+    if len(goals) > 3:
+        data['goal'][goals[3]] = [
+            'uav',
             'uav'
-        ],
-    }
+        ]
+        data['agents'].append(['a{}'.format(len(data['agents'])), 'uav'])
+        data['agents'].append(['a{}'.format(len(data['agents'])), 'uav'])
     
     with open(filename, 'w') as f:
         yaml.dump(data, f, default_flow_style=False)
@@ -116,8 +131,14 @@ def main():
         required=True,
         help='percentage of edges to drop from the node'
     )
+    parser.add_argument(
+        '-g','--goal_num',
+        nargs='?',
+        required=True,
+        help='percentage of edges to drop from the node'
+    )
     args = parser.parse_args()
-    save_yaml(float(args.error),(int(args.grid_x), int(args.grid_y)), float(args.drop_percent),args.output)
+    save_yaml(float(args.error),(int(args.grid_x), int(args.grid_y)), float(args.drop_percent),int(args.goal_num), args.output)
     
 
 if __name__ == "__main__":

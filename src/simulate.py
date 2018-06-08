@@ -46,7 +46,10 @@ def main():
 		policy = yaml.load(f.read())
 
 	problem = Problem(args.input_problem)
-	problem.simulate(policy,args.iterations,args.figure_template,args.output)
+	history = problem.simulate(policy,args.iterations,args.figure_template,args.output)
+        with open('{}/history.txt'.format(args.output), 'w') as f:
+            for i in range(len(history.keys())):
+                f.write(str(history[i])+'\n')
 
 
 if __name__ == "__main__":
